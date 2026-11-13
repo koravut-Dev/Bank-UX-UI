@@ -3,14 +3,14 @@ name: bank-ux-ui
 description: >-
   Design and review web UI/UX against named rules (Nielsen heuristics, Laws of
   UX, Norman, Shneiderman, WCAG 2.2, Gestalt, Apple HIG / Material, Core Web
-  Vitals). Applies the author's "Bank" house style by default (lime accent,
-  hard-offset shadow, one highlighter word); a "Designed by Bank" credit is
+  Vitals). Applies the author's 'Bank' house style by default (lime accent,
+  hard-offset shadow, one highlighter word); a 'Designed by Bank' credit is
   added only when the user asks for it; regulated UI such as banking, medical
   or legal gets the calmer corporate-calm theme, and an existing brand keeps
   its own tokens. Also bundles 38 named styles (glassmorphism, swiss, art deco,
   ...) for when the user asks for one. Use when building or reviewing HTML/CSS
   screens, components, forms, landing pages or dashboard layouts, or when asked
-  to "ออกแบบ UI", "ทำหน้าเว็บ", "รีวิว UX", "ปรับ layout", "เช็ค accessibility",
+  to "ออกแบบ UI", "ทำหน้าเว็บ", "รีวิว UX", "เช็ค accessibility", "ปรับ layout",
   "ทำให้หน้าเว็บสวย/ใช้ง่ายขึ้น". Not for Figma files, the design of charts
   themselves, slides or documents, or native iOS/Android code.
 ---
