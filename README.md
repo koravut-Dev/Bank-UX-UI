@@ -37,7 +37,7 @@ npx skills add koravut-Dev/Bank-UX-UI
 
 Design and review web UI/UX against named rules (Nielsen heuristics, Laws of UX, Norman, Shneiderman, WCAG 2.2, Gestalt, Apple HIG / Material, Core Web Vitals). Applies the auth...
 
-<sub>Try: <code>Bank</code> · <code>Designed by Bank</code> · <code>ออกแบบ UI</code> · <code>ทำหน้าเว็บ</code></sub>
+<sub>Try: <code>ออกแบบ UI</code> · <code>ทำหน้าเว็บ</code> · <code>รีวิว UX</code> · <code>เช็ค accessibility</code></sub>
 
 ```bash
 npx skills add koravut-Dev/Bank-UX-UI --skill bank-ux-ui
