@@ -1,0 +1,104 @@
+/* Style: Spatial / 3D (visionOS) (สเปเชียล)
+   แผงกระจกโค้งมนมากลอยเหนือฉากหลัง เงาลึกนุ่ม แสงขอบด้านบน
+   Covers: มุม 28px กระจกฝ้า เงาลึก แสงขอบบน ฟอนต์ Noto Sans Thai
+   Still yours to add: ฉากหลัง 3 มิติและการเคลื่อนไหวเชิงลึกต้องทำเอง
+   Caution: เหมือน glassmorphism: ตัวตรวจเช็กเฉพาะสีพื้นเลวร้ายที่สุดใน --surface
+   Word emphasis (.ui-mark): color
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Noto Sans Thai, JetBrains Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="spatial.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #1D1D1F;
+  --c-paper: #DDE3EE;
+  --c-accent: #0060DF;
+  --on-accent: #FFFFFF;
+  --surface: #F2F5FA;
+  --muted: #424852;
+  --line: #5B6577;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 28px;
+  --bw: 1px;
+  --offset: 0px;
+  --elev: 0 20px 40px rgba(20,30,60,.18), inset 0 1px 0 rgba(255,255,255,.7);
+  --elev-hover: 0 24px 48px rgba(20,30,60,.22), inset 0 1px 0 rgba(255,255,255,.8);
+  --elev-press: 0 8px 16px rgba(20,30,60,.18), inset 0 1px 0 rgba(255,255,255,.7);
+  --hover-lift: -1px;
+  --press-shift: 1px;
+  --card-bg: rgba(255,255,255,.62);
+  --btn-bg: rgba(255,255,255,.62);
+  --blur: blur(24px) saturate(1.6);
+  --page-bg: linear-gradient(160deg,#DDE3EE 0%,#E8DFF0 50%,#D6E8F5 100%);
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Noto Sans Thai",system-ui,sans-serif;
+  --font-body: "Noto Sans Thai",system-ui,sans-serif;
+  --font-mono: "JetBrains Mono","Noto Sans Thai",ui-monospace,monospace;
+  --heading-weight: 600;
+  --mark-kind: color;
+  --em-soft: #ACC6EB;
+  --em-strong: #015DD5;
+  --em-strong2: #0C438C;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101114;
+    --fg: #F5F5F7;
+    --surface: #26282D;
+    --muted: #B3B7C0;
+    --line: #8A91A0;
+    --accent: #64A8FF;
+    --on-accent: #0B1F3A;
+    --focus: #9CC8FF;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: 0 20px 40px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.12);
+    --elev-hover: 0 24px 48px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.16);
+    --elev-press: 0 8px 16px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.12);
+    --hover-lift: -1px;
+    --press-shift: 1px;
+    --card-bg: rgba(255,255,255,.08);
+    --btn-bg: rgba(255,255,255,.08);
+    --blur: blur(24px) saturate(1.6);
+    --page-bg: linear-gradient(160deg,#101114 0%,#1B1830 50%,#0F1F2E 100%);
+    --em-soft: #223248;
+    --em-strong: #64A8FF;
+    --em-strong2: #9EC7FC;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101114;
+  --fg: #F5F5F7;
+  --surface: #26282D;
+  --muted: #B3B7C0;
+  --line: #8A91A0;
+  --accent: #64A8FF;
+  --on-accent: #0B1F3A;
+  --focus: #9CC8FF;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: 0 20px 40px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.12);
+  --elev-hover: 0 24px 48px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.16);
+  --elev-press: 0 8px 16px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.12);
+  --hover-lift: -1px;
+  --press-shift: 1px;
+  --card-bg: rgba(255,255,255,.08);
+  --btn-bg: rgba(255,255,255,.08);
+  --blur: blur(24px) saturate(1.6);
+  --page-bg: linear-gradient(160deg,#101114 0%,#1B1830 50%,#0F1F2E 100%);
+  --em-soft: #223248;
+  --em-strong: #64A8FF;
+  --em-strong2: #9EC7FC;
+}
+
+/* word emphasis */
+.ui-mark{color:var(--em-strong)}

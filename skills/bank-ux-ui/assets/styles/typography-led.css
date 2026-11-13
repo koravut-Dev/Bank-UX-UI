@@ -1,0 +1,90 @@
+/* Style: Typography-led / Kinetic type (ตัวอักษรเป็นพระเอก)
+   ขาว-ดำคมชัด หัวข้อใหญ่หนาตัวพิมพ์ใหญ่ สีเน้นส้มแดงจุดเดียว
+   Covers: หัวข้อตัวหนาพิเศษพิมพ์ใหญ่ ขอบ 2px ไม่มีมุมโค้ง ไม่มีเงา
+   Still yours to add: การเคลื่อนไหวของตัวอักษร (kinetic) ต้องเขียน animation เอง และต้องเคารพ prefers-reduced-motion
+   Caution: พิมพ์ใหญ่มีผลกับตัวอักษรละติน ภาษาไทยไม่มีตัวพิมพ์ใหญ่ ฟอนต์หัวข้อ Anton ไม่มีอักษรไทย จะใช้ Kanit แทน
+   Word emphasis (.ui-mark): block
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Anton, Kanit, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Anton&family=Kanit:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="typography-led.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #000000;
+  --c-paper: #FFFFFF;
+  --c-accent: #FF3B00;
+  --on-accent: #000000;
+  --muted: #4D4D4D;
+  --line: #000000;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 0px;
+  --bw: 2px;
+  --offset: 0px;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --font-display: "Anton","Kanit",system-ui,sans-serif;
+  --font-body: "Kanit",system-ui,sans-serif;
+  --font-mono: "Space Mono","Kanit",ui-monospace,monospace;
+  --heading-weight: 400;
+  --heading-case: uppercase;
+  --mark-kind: block;
+  --em-soft: #FFD4C7;
+  --em-strong: #D93200;
+  --em-strong2: #821E00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #000000;
+    --fg: #FFFFFF;
+    --surface: #0A0A0A;
+    --muted: #B3B3B3;
+    --line: #FFFFFF;
+    --accent: #FF5A2B;
+    --on-accent: #000000;
+    --focus: #FF5A2B;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: none;
+    --elev-hover: none;
+    --elev-press: none;
+    --hover-lift: 0px;
+    --press-shift: 1px;
+    --em-soft: #381409;
+    --em-strong: #FF5A2B;
+    --em-strong2: #FF9C80;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #000000;
+  --fg: #FFFFFF;
+  --surface: #0A0A0A;
+  --muted: #B3B3B3;
+  --line: #FFFFFF;
+  --accent: #FF5A2B;
+  --on-accent: #000000;
+  --focus: #FF5A2B;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --em-soft: #381409;
+  --em-strong: #FF5A2B;
+  --em-strong2: #FF9C80;
+}
+
+/* word emphasis */
+.ui-mark{background:var(--accent);color:var(--on-accent);padding:0 .15em;border-radius:.15em}

@@ -1,0 +1,203 @@
+/* Neutral base for the extra styles in assets/styles/.
+   No Bank signature lives here: no lime accent, no Space Grotesk/IBM Plex, no hard-offset shadow,
+   no sink-into-shadow press, no highlighter band. Only the LOCKED rules are built in
+   (contrast via tokens, 44px targets, 3px focus ring, light + dark themes, reduced motion).
+   Everything that gives a look (palette, fonts, shape, shadow, motion, emphasis of a word)
+   is declared by the style file that is loaded after this one.
+   Classes: .ui-btn  .ui-btn--primary  .ui-card  .ui-input  .ui-mark  .ui-credit
+   Usage: base.css first, then ONE style file. Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of the style file> */
+
+:root {
+  --c-ink: #1A1A1A;
+  --c-paper: #F5F5F5;
+  --c-accent: #2563EB;
+
+  --bg: var(--c-paper);
+  --fg: var(--c-ink);
+  --muted: #555555;
+  --surface: #FFFFFF;
+  --line: #767676;
+  --shadow-color: transparent;
+  --focus: var(--c-ink);
+  --accent: var(--c-accent);
+  --on-accent: #FFFFFF;
+
+  /* Emphasis of one word in the main heading. The style picks a kind and styles .ui-mark itself.
+     kind: band | block | brush | thick | wavy | double | outline | circle | pill | color | gradient | serif | bold
+     --em-soft / --em-strong / --em-strong2 feed the kinds that need a tint or a dark accent text color. */
+  --mark-kind: bold;
+  --em-soft: #DBE7FF;
+  --em-strong: #1D4ED8;
+  --em-strong2: #1E3A8A;
+
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+
+  --radius: 8px;
+  --bw: 1px;
+  --offset: 0px;
+  --target: 44px;
+
+  /* Elevation and motion: neutral defaults (no shadow, subtle tint on hover/press). A style overrides. */
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 0px;
+  --hover-filter: brightness(.96);
+  --press-filter: brightness(.9);
+
+  /* Surfaces. Keep --surface a solid hex = worst-case color behind text when these are translucent/gradients. */
+  --card-bg: var(--surface);
+  --btn-bg: var(--surface);
+  --primary-bg: var(--accent);
+  --page-bg: var(--bg);
+  --blur: none;
+  --heading-weight: 700;
+  --heading-case: none;
+
+  --font-display: "Noto Sans Thai", system-ui, sans-serif;
+  --font-body: "Noto Sans Thai", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Noto Sans Thai", monospace;
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121212;
+    --fg: #F2F2F2;
+    --muted: #B0B0B0;
+    --surface: #1C1C1C;
+    --line: #8A8A8A;
+    --shadow-color: transparent;
+    --focus: #F2F2F2;
+    --accent: #7AA2FF;
+    --on-accent: #0B1020;
+    --em-soft: #1E2F5C;
+    --em-strong: #9DBBFF;
+    --em-strong2: #C5D5FF;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121212;
+  --fg: #F2F2F2;
+  --muted: #B0B0B0;
+  --surface: #1C1C1C;
+  --line: #8A8A8A;
+  --shadow-color: transparent;
+  --focus: #F2F2F2;
+  --accent: #7AA2FF;
+  --on-accent: #0B1020;
+  --em-soft: #1E2F5C;
+  --em-strong: #9DBBFF;
+  --em-strong2: #C5D5FF;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+}
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: var(--heading-weight);
+  text-transform: var(--heading-case);
+  line-height: 1.2;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.ui-btn {
+  min-height: var(--target);
+  padding: 0 var(--space-5);
+  font: 600 16px/1 var(--font-body);
+  color: var(--fg);
+  background: var(--btn-bg);
+  border: var(--bw) solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--elev);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+  cursor: pointer;
+  transition: transform 150ms ease-out, box-shadow 150ms ease-out, filter 150ms ease-out;
+}
+.ui-btn:hover {
+  transform: translate(var(--hover-lift), var(--hover-lift));
+  box-shadow: var(--elev-hover);
+  filter: var(--hover-filter);
+}
+.ui-btn:active {
+  transform: translate(var(--press-shift), var(--press-shift));
+  box-shadow: var(--elev-press);
+  filter: var(--press-filter);
+}
+.ui-btn--primary {
+  background: var(--primary-bg);
+  color: var(--on-accent);
+}
+.ui-btn:disabled, .ui-btn[aria-disabled="true"] {
+  opacity: .5; cursor: not-allowed; transform: none; filter: none;
+  box-shadow: none;
+}
+
+.ui-card {
+  background: var(--card-bg);
+  color: var(--fg);
+  border: var(--bw) solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--elev);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+  padding: var(--space-5);
+}
+
+.ui-input {
+  box-sizing: border-box;
+  min-height: var(--target);
+  width: 100%;
+  padding: 0 var(--space-3);
+  font: 400 16px/1.4 var(--font-body);
+  color: var(--fg);
+  background: var(--surface);
+  border: var(--bw) solid var(--line);
+  border-radius: var(--radius);
+}
+.ui-input:focus-visible { box-shadow: var(--elev); }
+.ui-input[aria-invalid="true"] { border-color: var(--danger); }
+
+/* Emphasis word: the style file defines the look. Base adds nothing. */
+.ui-mark { font-weight: inherit; }
+
+.ui-credit {
+  display: flex; align-items: center; gap: var(--space-2);
+  font: 400 14px/1.4 var(--font-mono);
+  color: var(--muted);
+  padding: var(--space-5) var(--space-4);
+}
+.ui-credit__logo {
+  display: inline-grid; place-items: center;
+  width: 20px; height: 20px;
+  font: 700 12px/1 var(--font-display);
+  color: var(--on-accent);
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-btn { transition: none; }
+  .ui-btn:hover, .ui-btn:active { transform: none; filter: none; }
+}

@@ -1,0 +1,104 @@
+/* Style: Glassmorphism (กลาสมอร์ฟิซึม)
+   กระจกฝ้าโปร่งแสงเหนือพื้นหลังไล่สี เบลอฉากหลัง ขอบบางสว่าง
+   Covers: การ์ด/ปุ่มโปร่งแสง backdrop blur พื้นหลังไล่สีหลายจุด
+   Still yours to add: ฉากหลังต้องมีสีหรือภาพให้เบลอ ถ้าพื้นเรียบจะดูเหมือนการ์ดธรรมดา
+   Caution: โปร่งแสงทำให้คอนทราสต์ผันผวนตามฉากหลัง ตัวตรวจเช็กเฉพาะสีพื้นหลังเลวร้ายที่สุดที่ประกาศไว้ใน --surface
+   Word emphasis (.ui-mark): gradient
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Prompt, JetBrains Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="glassmorphism.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #0F172A;
+  --c-paper: #C9D7FF;
+  --c-accent: #3B4FD8;
+  --on-accent: #FFFFFF;
+  --surface: #E6EDFF;
+  --muted: #374265;
+  --line: #4B5C8A;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #075A2D;
+  --warning: #7A4F00;
+  --radius: 20px;
+  --bw: 1px;
+  --offset: 0px;
+  --elev: 0 8px 32px rgba(31,38,135,.20);
+  --elev-hover: 0 10px 36px rgba(31,38,135,.26);
+  --elev-press: 0 2px 8px rgba(31,38,135,.20);
+  --hover-lift: -1px;
+  --press-shift: 1px;
+  --card-bg: rgba(255,255,255,.55);
+  --btn-bg: rgba(255,255,255,.55);
+  --blur: blur(14px) saturate(1.4);
+  --page-bg: linear-gradient(135deg,#C9D7FF 0%,#E3D4FF 50%,#C7F0FF 100%);
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Prompt",system-ui,sans-serif;
+  --font-body: "Prompt",system-ui,sans-serif;
+  --font-mono: "JetBrains Mono","Prompt",ui-monospace,monospace;
+  --mark-kind: gradient;
+  --em-soft: #AAB9F6;
+  --em-strong: #394CCF;
+  --em-strong2: #28378D;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1226;
+    --fg: #EEF0FF;
+    --surface: #1B2040;
+    --muted: #B7BEDB;
+    --line: #8F9BD0;
+    --accent: #8FA0FF;
+    --on-accent: #0F1226;
+    --focus: #C0C9FF;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: 0 8px 32px rgba(0,0,0,.45);
+    --elev-hover: 0 10px 36px rgba(0,0,0,.55);
+    --elev-press: 0 2px 8px rgba(0,0,0,.45);
+    --hover-lift: -1px;
+    --press-shift: 1px;
+    --card-bg: rgba(255,255,255,.08);
+    --btn-bg: rgba(255,255,255,.08);
+    --blur: blur(14px) saturate(1.4);
+    --page-bg: linear-gradient(135deg,#0F1226 0%,#241B4D 50%,#0F2B4D 100%);
+    --em-soft: #2B3156;
+    --em-strong: #8FA0FF;
+    --em-strong2: #B5C0FF;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1226;
+  --fg: #EEF0FF;
+  --surface: #1B2040;
+  --muted: #B7BEDB;
+  --line: #8F9BD0;
+  --accent: #8FA0FF;
+  --on-accent: #0F1226;
+  --focus: #C0C9FF;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: 0 8px 32px rgba(0,0,0,.45);
+  --elev-hover: 0 10px 36px rgba(0,0,0,.55);
+  --elev-press: 0 2px 8px rgba(0,0,0,.45);
+  --hover-lift: -1px;
+  --press-shift: 1px;
+  --card-bg: rgba(255,255,255,.08);
+  --btn-bg: rgba(255,255,255,.08);
+  --blur: blur(14px) saturate(1.4);
+  --page-bg: linear-gradient(135deg,#0F1226 0%,#241B4D 50%,#0F2B4D 100%);
+  --em-soft: #2B3156;
+  --em-strong: #8FA0FF;
+  --em-strong2: #B5C0FF;
+}
+
+/* word emphasis */
+.ui-mark{background-image:linear-gradient(90deg,var(--em-strong),var(--em-strong2));-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (forced-colors:active){.ui-mark{color:CanvasText;background:none}}

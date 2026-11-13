@@ -1,0 +1,94 @@
+/* Style: Wabi-sabi (วาบิซาบิ)
+   ความงามของความไม่สมบูรณ์ สีดินและกระดาษเก่า มุมไม่เท่ากัน เงาบางเหมือนรอยรอง
+   Covers: มุมโค้งไม่สมมาตร เงาบาง สีน้ำตาลดินบนกระดาษเก่า
+   Still yours to add: พื้นผิวกระดาษ รอยด่าง ต้องใส่เป็นรูปเอง
+   Caution: ไม่มี
+   Word emphasis (.ui-mark): brush
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Taviraj, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="wabi-sabi.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #3A332C;
+  --c-paper: #E4DCCD;
+  --c-accent: #A0522D;
+  --on-accent: #FFFFFF;
+  --surface: #EFE8DA;
+  --muted: #5C5246;
+  --line: #6F6454;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 14px 10px 16px 8px;
+  --bw: 2px;
+  --offset: 0px;
+  --elev: 0 2px 0 rgba(58,51,44,.35);
+  --elev-hover: 0 3px 0 rgba(58,51,44,.35);
+  --elev-press: 0 0 0 rgba(58,51,44,0);
+  --hover-lift: -1px;
+  --press-shift: 2px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Taviraj",serif;
+  --font-body: "Taviraj",serif;
+  --font-mono: "Space Mono","Taviraj",ui-monospace,monospace;
+  --heading-weight: 600;
+  --mark-kind: brush;
+  --em-soft: #D5BEAA;
+  --em-strong: #914D2D;
+  --em-strong2: #6E432D;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #221E19;
+    --fg: #E4DCCD;
+    --surface: #2D2822;
+    --muted: #BDB29F;
+    --line: #988B76;
+    --accent: #D08B65;
+    --on-accent: #221E19;
+    --focus: #E9B896;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: 0 2px 0 rgba(0,0,0,.5);
+    --elev-hover: 0 3px 0 rgba(0,0,0,.5);
+    --elev-press: 0 0 0 rgba(0,0,0,0);
+    --hover-lift: -1px;
+    --press-shift: 2px;
+    --em-soft: #48362A;
+    --em-strong: #D08B65;
+    --em-strong2: #D8AB8F;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #221E19;
+  --fg: #E4DCCD;
+  --surface: #2D2822;
+  --muted: #BDB29F;
+  --line: #988B76;
+  --accent: #D08B65;
+  --on-accent: #221E19;
+  --focus: #E9B896;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: 0 2px 0 rgba(0,0,0,.5);
+  --elev-hover: 0 3px 0 rgba(0,0,0,.5);
+  --elev-press: 0 0 0 rgba(0,0,0,0);
+  --hover-lift: -1px;
+  --press-shift: 2px;
+  --em-soft: #48362A;
+  --em-strong: #D08B65;
+  --em-strong2: #D8AB8F;
+}
+
+/* word emphasis */
+.ui-mark{position:relative;isolation:isolate;padding:0 .25em;color:var(--on-accent)}
+.ui-mark::before{content:"";position:absolute;inset:8% -2% -4%;z-index:-1;background:var(--accent);
+  clip-path:polygon(0 20%,5% 6%,94% 0,100% 24%,98% 78%,100% 96%,7% 100%,0 80%);transform:rotate(-1.5deg)}

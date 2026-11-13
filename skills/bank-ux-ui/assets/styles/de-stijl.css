@@ -1,0 +1,89 @@
+/* Style: De Stijl (เดอสไตล์)
+   เส้นดำหนาตั้งฉาก พื้นขาว สีปฐมภูมิน้ำเงินเป็นจุดเน้น ไม่มีเงาและมุมโค้ง
+   Covers: ขอบดำหนา 4px เหลี่ยม ไม่มีเงา ปุ่มน้ำเงินเข้ม
+   Still yours to add: บล็อกสีแดง เหลือง น้ำเงินแบบ Mondrian เป็นกราฟิกต้องทำเอง
+   Caution: ไม่มี
+   Word emphasis (.ui-mark): outline
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Kanit, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="de-stijl.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #000000;
+  --c-paper: #FFFFFF;
+  --c-accent: #0B3FA8;
+  --on-accent: #FFFFFF;
+  --muted: #444444;
+  --line: #000000;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 0px;
+  --bw: 4px;
+  --offset: 0px;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --font-display: "Kanit",system-ui,sans-serif;
+  --font-body: "Kanit",system-ui,sans-serif;
+  --font-mono: "Space Mono","Kanit",ui-monospace,monospace;
+  --heading-weight: 700;
+  --mark-kind: outline;
+  --em-soft: #C9D5EC;
+  --em-strong: #0B3FA8;
+  --em-strong2: #072665;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #000000;
+    --fg: #FFFFFF;
+    --surface: #101010;
+    --muted: #BBBBBB;
+    --line: #FFFFFF;
+    --accent: #6FA0FF;
+    --on-accent: #000000;
+    --focus: #FF4D4D;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: none;
+    --elev-hover: none;
+    --elev-press: none;
+    --hover-lift: 0px;
+    --press-shift: 1px;
+    --em-soft: #182338;
+    --em-strong: #6FA0FF;
+    --em-strong2: #A9C6FF;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #000000;
+  --fg: #FFFFFF;
+  --surface: #101010;
+  --muted: #BBBBBB;
+  --line: #FFFFFF;
+  --accent: #6FA0FF;
+  --on-accent: #000000;
+  --focus: #FF4D4D;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --em-soft: #182338;
+  --em-strong: #6FA0FF;
+  --em-strong2: #A9C6FF;
+}
+
+/* word emphasis */
+.ui-mark{box-shadow:inset 0 0 0 .08em var(--em-strong);padding:0 .25em;border-radius:.2em}

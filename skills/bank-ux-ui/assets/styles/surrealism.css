@@ -1,0 +1,85 @@
+/* Style: Surrealism (เซอร์เรียลลิซึม)
+   พื้นหลังไล่สีเหมือนความฝัน มุมโค้งไม่สมมาตร ม่วงเข้มกับส้มพีช
+   Covers: พื้นหลังไล่สีพีช-ลาเวนเดอร์-ฟ้า มุมแปลก เงาแข็งสีพีช ฟอนต์เซอริฟตัวหนา
+   Still yours to add: ภาพตัดต่อแปลกตาและวัตถุลอยต้องใส่เอง
+   Caution: ฟอนต์ Playfair Display ไม่มีอักษรไทย ใช้ Maitree แทน
+   Word emphasis (.ui-mark): gradient
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Playfair Display, Maitree, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Maitree:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="surrealism.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #1D1033;
+  --c-paper: #E9E4FF;
+  --c-accent: #FF8A5B;
+  --on-accent: #1D1033;
+  --muted: #4A3F70;
+  --line: #4C2A85;
+  --shadow-color: #FF8A5B;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 40px 10px 40px 10px;
+  --bw: 2px;
+  --offset: 6px;
+  --page-bg: linear-gradient(180deg,#FBD3C0 0%,#E9E4FF 55%,#BFD7FF 100%);
+  --elev: 6px 6px 0 var(--shadow-color);
+  --elev-hover: 7px 7px 0 var(--shadow-color);
+  --elev-press: 0 0 0 var(--shadow-color);
+  --hover-lift: -1px;
+  --press-shift: 6px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Playfair Display","Maitree",serif;
+  --font-body: "Maitree",serif;
+  --font-mono: "Space Mono","Maitree",ui-monospace,monospace;
+  --heading-weight: 700;
+  --mark-kind: gradient;
+  --em-soft: #EED0DB;
+  --em-strong: #995349;
+  --em-strong2: #673840;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E0B24;
+    --fg: #F4EEFF;
+    --surface: #1A1540;
+    --muted: #C9BEEE;
+    --line: #9F8BE6;
+    --accent: #FFA27A;
+    --on-accent: #0E0B24;
+    --focus: #FFD3BF;
+    --shadow-color: #7A5CFF;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --page-bg: linear-gradient(180deg,#2A1230 0%,#0E0B24 55%,#10204A 100%);
+    --em-soft: #432C37;
+    --em-strong: #FFA27A;
+    --em-strong2: #FBC0AF;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E0B24;
+  --fg: #F4EEFF;
+  --surface: #1A1540;
+  --muted: #C9BEEE;
+  --line: #9F8BE6;
+  --accent: #FFA27A;
+  --on-accent: #0E0B24;
+  --focus: #FFD3BF;
+  --shadow-color: #7A5CFF;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --page-bg: linear-gradient(180deg,#2A1230 0%,#0E0B24 55%,#10204A 100%);
+  --em-soft: #432C37;
+  --em-strong: #FFA27A;
+  --em-strong2: #FBC0AF;
+}
+
+/* word emphasis */
+.ui-mark{background-image:linear-gradient(90deg,var(--em-strong),var(--em-strong2));-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (forced-colors:active){.ui-mark{color:CanvasText;background:none}}

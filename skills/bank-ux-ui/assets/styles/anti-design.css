@@ -1,0 +1,90 @@
+/* Style: Anti-design (แอนตี้ดีไซน์)
+   ดิบ จงใจฝืนกฎความสวย เหลืองกับชมพูแสบตา ฟอนต์มีเชิงปนโมโน ขอบหนา
+   Covers: สีขัดกันแต่ยังผ่านคอนทราสต์ ขอบ 3px เหลี่ยม ฟอนต์ Times กับ Space Mono
+   Still yours to add: การจัดวางที่ผิดกริดโดยตั้งใจต้องทำเอง
+   Caution: แนวนี้ชอบฝืนกฎใช้งานง่าย ธีมนี้ฝืนได้แค่ด้านหน้าตา ส่วนคอนทราสต์ ขนาดเป้า และ focus ยังถูกล็อกไว้
+   Word emphasis (.ui-mark): double
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Space Mono, Sriracha
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sriracha&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="anti-design.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #000000;
+  --c-paper: #FFFFFF;
+  --c-accent: #FF00FF;
+  --on-accent: #000000;
+  --surface: #FFFF66;
+  --muted: #333333;
+  --line: #000000;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 0px;
+  --bw: 3px;
+  --offset: 0px;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --font-display: "Space Mono","Sriracha",ui-monospace,monospace;
+  --font-body: "Times New Roman","Sriracha",serif;
+  --font-mono: "Space Mono","Sriracha",ui-monospace,monospace;
+  --heading-weight: 700;
+  --mark-kind: double;
+  --em-soft: #FFC7FF;
+  --em-strong: #CC00CC;
+  --em-strong2: #7A007A;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #000000;
+    --fg: #FFFFFF;
+    --surface: #1A1A1A;
+    --muted: #CCCCCC;
+    --line: #FFFFFF;
+    --accent: #FF4DFF;
+    --on-accent: #000000;
+    --focus: #00FFFF;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: none;
+    --elev-hover: none;
+    --elev-press: none;
+    --hover-lift: 0px;
+    --press-shift: 1px;
+    --em-soft: #381138;
+    --em-strong: #FF4DFF;
+    --em-strong2: #FF94FF;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #000000;
+  --fg: #FFFFFF;
+  --surface: #1A1A1A;
+  --muted: #CCCCCC;
+  --line: #FFFFFF;
+  --accent: #FF4DFF;
+  --on-accent: #000000;
+  --focus: #00FFFF;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --em-soft: #381138;
+  --em-strong: #FF4DFF;
+  --em-strong2: #FF94FF;
+}
+
+/* word emphasis */
+.ui-mark{text-decoration:underline double var(--em-strong);text-decoration-thickness:.08em;text-underline-offset:.18em}

@@ -1,0 +1,88 @@
+/* Style: Dark mode / OLED (โหมดมืดดำสนิท)
+   พื้นดำสนิทประหยัดจอ OLED ตัวอักษรขาว สีเน้นเขียวสว่าง
+   Covers: โหมดมืดพื้น #000000 โหมดสว่างแบบกลาง ๆ คู่กัน
+   Still yours to add: ไม่ต้องเพิ่ม
+   Caution: ดำสนิทกับขาวสนิทอาจแสบตา ถ้าใช้นานควรลดความสว่างตัวอักษร
+   Word emphasis (.ui-mark): color
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Kanit, JetBrains Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="oled-dark.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #0A0A0A;
+  --c-paper: #F5F5F5;
+  --c-accent: #00A86B;
+  --on-accent: #000000;
+  --muted: #565656;
+  --line: #7A7A7A;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 12px;
+  --bw: 1px;
+  --offset: 0px;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --font-display: "Kanit",system-ui,sans-serif;
+  --font-body: "Kanit",system-ui,sans-serif;
+  --font-mono: "JetBrains Mono","Kanit",ui-monospace,monospace;
+  --mark-kind: color;
+  --em-soft: #BFE4D7;
+  --em-strong: #038153;
+  --em-strong2: #065136;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #000000;
+    --fg: #FFFFFF;
+    --surface: #0D0D0D;
+    --muted: #A3A3A3;
+    --line: #7A7A7A;
+    --accent: #2EE6A6;
+    --on-accent: #000000;
+    --focus: #2EE6A6;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: none;
+    --elev-hover: none;
+    --elev-press: none;
+    --hover-lift: 0px;
+    --press-shift: 1px;
+    --em-soft: #0A3325;
+    --em-strong: #2EE6A6;
+    --em-strong2: #82F0CA;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #000000;
+  --fg: #FFFFFF;
+  --surface: #0D0D0D;
+  --muted: #A3A3A3;
+  --line: #7A7A7A;
+  --accent: #2EE6A6;
+  --on-accent: #000000;
+  --focus: #2EE6A6;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --em-soft: #0A3325;
+  --em-strong: #2EE6A6;
+  --em-strong2: #82F0CA;
+}
+
+/* word emphasis */
+.ui-mark{color:var(--em-strong)}

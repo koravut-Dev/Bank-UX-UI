@@ -1,0 +1,93 @@
+/* Style: Art Deco (อาร์ตเดโค)
+   ดำกับทอง เรขาคณิตสมมาตร เส้นขอบซ้อนสองชั้น ตัวพิมพ์ใหญ่หรูหรา
+   Covers: เส้นขอบทองซ้อนสองชั้นแทนเงา ไม่มีมุมโค้ง ตัวพิมพ์ใหญ่ ฟอนต์ Cinzel
+   Still yours to add: ลายพัด ลายแสงอาทิตย์ และกรอบมุมต้องใส่เอง
+   Caution: ฟอนต์ Cinzel ไม่มีอักษรไทย ใช้ Mitr แทน
+   Word emphasis (.ui-mark): double
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Cinzel, Mitr, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Mitr:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="art-deco.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #0E0E0E;
+  --c-paper: #F5EFE0;
+  --c-accent: #C9A227;
+  --on-accent: #0E0E0E;
+  --surface: #FFFDF5;
+  --muted: #4F4A3A;
+  --line: #0E0E0E;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 0px;
+  --bw: 2px;
+  --offset: 0px;
+  --elev: 0 0 0 3px #FFFDF5, 0 0 0 5px #C9A227;
+  --elev-hover: 0 0 0 3px #FFFDF5, 0 0 0 6px #C9A227;
+  --elev-press: 0 0 0 3px #FFFDF5, 0 0 0 4px #C9A227;
+  --hover-lift: 0px;
+  --press-shift: 0px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Cinzel","Mitr",system-ui,sans-serif;
+  --font-body: "Mitr",system-ui,sans-serif;
+  --font-mono: "Space Mono","Mitr",ui-monospace,monospace;
+  --heading-weight: 700;
+  --heading-case: uppercase;
+  --mark-kind: double;
+  --em-soft: #EBDEB7;
+  --em-strong: #7E671D;
+  --em-strong2: #514317;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E0E0E;
+    --fg: #F5EFE0;
+    --surface: #1A1710;
+    --muted: #CFC6A8;
+    --line: #C9A227;
+    --accent: #D9B84A;
+    --on-accent: #0E0E0E;
+    --focus: #E8CF73;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: 0 0 0 3px #1A1710, 0 0 0 5px #C9A227;
+    --elev-hover: 0 0 0 3px #1A1710, 0 0 0 6px #C9A227;
+    --elev-press: 0 0 0 3px #1A1710, 0 0 0 4px #C9A227;
+    --hover-lift: 0px;
+    --press-shift: 0px;
+    --em-soft: #3B331B;
+    --em-strong: #D9B84A;
+    --em-strong2: #E4CE86;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E0E0E;
+  --fg: #F5EFE0;
+  --surface: #1A1710;
+  --muted: #CFC6A8;
+  --line: #C9A227;
+  --accent: #D9B84A;
+  --on-accent: #0E0E0E;
+  --focus: #E8CF73;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: 0 0 0 3px #1A1710, 0 0 0 5px #C9A227;
+  --elev-hover: 0 0 0 3px #1A1710, 0 0 0 6px #C9A227;
+  --elev-press: 0 0 0 3px #1A1710, 0 0 0 4px #C9A227;
+  --hover-lift: 0px;
+  --press-shift: 0px;
+  --em-soft: #3B331B;
+  --em-strong: #D9B84A;
+  --em-strong2: #E4CE86;
+}
+
+/* word emphasis */
+.ui-mark{text-decoration:underline double var(--em-strong);text-decoration-thickness:.08em;text-underline-offset:.18em}

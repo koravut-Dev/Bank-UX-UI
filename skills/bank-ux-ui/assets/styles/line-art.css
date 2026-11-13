@@ -1,0 +1,89 @@
+/* Style: Line art / Outline (ลายเส้น)
+   เส้นขอบเป็นพระเอก พื้นโปร่ง ไม่มีเงา ใช้สีเหลืองเป็นจุดเน้น
+   Covers: ขอบ 2px มุมกลม ไม่มีเงา พื้นครีม
+   Still yours to add: ไอคอนและภาพประกอบแบบเส้นต้องใส่เอง
+   Caution: ไม่มี
+   Word emphasis (.ui-mark): outline
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Josefin Sans, K2D, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=K2D:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="line-art.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #1B2430;
+  --c-paper: #FFFDF8;
+  --c-accent: #FFD84D;
+  --on-accent: #1B2430;
+  --muted: #4F5B6B;
+  --line: #1B2430;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 12px;
+  --bw: 2px;
+  --offset: 0px;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --font-display: "Josefin Sans","K2D",system-ui,sans-serif;
+  --font-body: "K2D",system-ui,sans-serif;
+  --font-mono: "Space Mono","K2D",ui-monospace,monospace;
+  --heading-weight: 700;
+  --mark-kind: outline;
+  --em-soft: #FFF5D2;
+  --em-strong: #82753D;
+  --em-strong2: #595538;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12171F;
+    --fg: #F2EFE6;
+    --surface: #12171F;
+    --muted: #B6BDC8;
+    --line: #F2EFE6;
+    --accent: #FFD84D;
+    --on-accent: #12171F;
+    --focus: #FFD84D;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: none;
+    --elev-hover: none;
+    --elev-press: none;
+    --hover-lift: 0px;
+    --press-shift: 1px;
+    --em-soft: #464129;
+    --em-strong: #FFD84D;
+    --em-strong2: #FAE18A;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12171F;
+  --fg: #F2EFE6;
+  --surface: #12171F;
+  --muted: #B6BDC8;
+  --line: #F2EFE6;
+  --accent: #FFD84D;
+  --on-accent: #12171F;
+  --focus: #FFD84D;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --em-soft: #464129;
+  --em-strong: #FFD84D;
+  --em-strong2: #FAE18A;
+}
+
+/* word emphasis */
+.ui-mark{box-shadow:inset 0 0 0 .08em var(--em-strong);padding:0 .25em;border-radius:.2em}

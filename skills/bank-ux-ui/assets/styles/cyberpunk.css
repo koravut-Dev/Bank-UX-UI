@@ -1,0 +1,82 @@
+/* Style: Cyberpunk (ไซเบอร์พังก์)
+   พื้นดำน้ำเงินเข้ม นีออนเหลืองกับชมพู มุมเหลี่ยม เงาแข็งสีฟ้านีออน
+   Covers: พาเลตต์นีออนบนพื้นมืด ขอบ 2px เหลี่ยม ตัวพิมพ์ใหญ่
+   Still yours to add: เอฟเฟกต์ glitch และสแกนไลน์ต้องทำเอง
+   Caution: เอฟเฟกต์กะพริบต้องไม่เกิน 3 ครั้งต่อวินาที (WCAG 2.3.1)
+   Word emphasis (.ui-mark): block
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Rajdhani, Chakra Petch, Share Tech Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Chakra+Petch:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="cyberpunk.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #0D0D1A;
+  --c-paper: #EDEDF5;
+  --c-accent: #FFE600;
+  --on-accent: #0D0D1A;
+  --muted: #4A4A66;
+  --line: #0D0D1A;
+  --shadow-color: #FF2E88;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 0px;
+  --bw: 2px;
+  --offset: 5px;
+  --elev: 5px 5px 0 var(--shadow-color);
+  --elev-hover: 6px 6px 0 var(--shadow-color);
+  --elev-press: 0 0 0 var(--shadow-color);
+  --hover-lift: -1px;
+  --press-shift: 5px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Rajdhani","Chakra Petch",system-ui,sans-serif;
+  --font-body: "Chakra Petch",system-ui,sans-serif;
+  --font-mono: "Share Tech Mono","Chakra Petch",ui-monospace,monospace;
+  --heading-weight: 700;
+  --heading-case: uppercase;
+  --mark-kind: block;
+  --em-soft: #F1EBBF;
+  --em-strong: #6E6410;
+  --em-strong2: #474114;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0A0A12;
+    --fg: #EDEDF5;
+    --surface: #14142A;
+    --muted: #A8A8C8;
+    --line: #FF2E88;
+    --accent: #FFE600;
+    --on-accent: #0A0A12;
+    --focus: #00F0FF;
+    --shadow-color: #00F0FF;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --em-soft: #403A0E;
+    --em-strong: #FFE600;
+    --em-strong2: #F8E962;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0A0A12;
+  --fg: #EDEDF5;
+  --surface: #14142A;
+  --muted: #A8A8C8;
+  --line: #FF2E88;
+  --accent: #FFE600;
+  --on-accent: #0A0A12;
+  --focus: #00F0FF;
+  --shadow-color: #00F0FF;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --em-soft: #403A0E;
+  --em-strong: #FFE600;
+  --em-strong2: #F8E962;
+}
+
+/* word emphasis */
+.ui-mark{background:var(--accent);color:var(--on-accent);padding:0 .15em;border-radius:.15em}

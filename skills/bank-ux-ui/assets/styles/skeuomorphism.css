@@ -1,0 +1,104 @@
+/* Style: Skeuomorphism (สเกอูมอร์ฟิซึม)
+   เลียนของจริง ปุ่มนูนไล่สี เงาซ้อน พื้นกระดาษหนัง
+   Covers: ไล่สีปุ่มและการ์ด เงานูน (inset highlight) โทนหนังและทอง
+   Still yours to add: พื้นผิวภาพ (หนัง ไม้ โลหะ) ต้องใส่เป็นรูปเอง
+   Caution: ไล่สีทุกจุดต้องผ่านคอนทราสต์ ตัวตรวจเช็กทุกสีหยุดของการไล่สี
+   Word emphasis (.ui-mark): block
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): DM Serif Display, Trirong, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Trirong:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="skeuomorphism.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #2B1D12;
+  --c-paper: #D8C7AE;
+  --c-accent: #B8860B;
+  --on-accent: #1A1208;
+  --surface: #E3D3B8;
+  --muted: #4F3B2A;
+  --line: #5A3E22;
+  --shadow-color: transparent;
+  --danger: #9E1126;
+  --success: #0A5E2E;
+  --warning: #6B4500;
+  --radius: 12px;
+  --bw: 1px;
+  --offset: 0px;
+  --elev: inset 0 1px 0 rgba(255,255,255,.6), 0 2px 4px rgba(0,0,0,.35), 0 6px 10px rgba(0,0,0,.20);
+  --elev-hover: inset 0 1px 0 rgba(255,255,255,.7), 0 3px 6px rgba(0,0,0,.38), 0 8px 14px rgba(0,0,0,.22);
+  --elev-press: inset 0 2px 4px rgba(0,0,0,.35);
+  --hover-lift: -1px;
+  --press-shift: 1px;
+  --btn-bg: linear-gradient(#FBF4E8,#E3D3B8);
+  --card-bg: linear-gradient(#F4EBDD,#E3D3B8);
+  --primary-bg: linear-gradient(#D9A832,#B8860B);
+  --page-bg: linear-gradient(#E0D0B6,#D1BE9F);
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "DM Serif Display","Trirong",serif;
+  --font-body: "Trirong",serif;
+  --font-mono: "Space Mono","Trirong",ui-monospace,monospace;
+  --heading-weight: 400;
+  --mark-kind: block;
+  --em-soft: #D1B98A;
+  --em-strong: #6A4C0F;
+  --em-strong2: #513910;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1E140C;
+    --fg: #F1E6D3;
+    --surface: #2C1F14;
+    --muted: #CDBBA3;
+    --line: #9C8365;
+    --accent: #D9A441;
+    --on-accent: #1E140C;
+    --focus: #F2C265;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: inset 0 1px 0 rgba(255,255,255,.12), 0 2px 4px rgba(0,0,0,.6), 0 6px 10px rgba(0,0,0,.4);
+    --elev-hover: inset 0 1px 0 rgba(255,255,255,.16), 0 3px 6px rgba(0,0,0,.65), 0 8px 14px rgba(0,0,0,.45);
+    --elev-press: inset 0 2px 4px rgba(0,0,0,.6);
+    --hover-lift: -1px;
+    --press-shift: 1px;
+    --btn-bg: linear-gradient(#3A2A1B,#2C1F14);
+    --card-bg: linear-gradient(#34261A,#2C1F14);
+    --primary-bg: linear-gradient(#E6B65A,#D9A441);
+    --page-bg: linear-gradient(#26190F,#1E140C);
+    --em-soft: #473418;
+    --em-strong: #D9A441;
+    --em-strong2: #E3BE7B;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1E140C;
+  --fg: #F1E6D3;
+  --surface: #2C1F14;
+  --muted: #CDBBA3;
+  --line: #9C8365;
+  --accent: #D9A441;
+  --on-accent: #1E140C;
+  --focus: #F2C265;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: inset 0 1px 0 rgba(255,255,255,.12), 0 2px 4px rgba(0,0,0,.6), 0 6px 10px rgba(0,0,0,.4);
+  --elev-hover: inset 0 1px 0 rgba(255,255,255,.16), 0 3px 6px rgba(0,0,0,.65), 0 8px 14px rgba(0,0,0,.45);
+  --elev-press: inset 0 2px 4px rgba(0,0,0,.6);
+  --hover-lift: -1px;
+  --press-shift: 1px;
+  --btn-bg: linear-gradient(#3A2A1B,#2C1F14);
+  --card-bg: linear-gradient(#34261A,#2C1F14);
+  --primary-bg: linear-gradient(#E6B65A,#D9A441);
+  --page-bg: linear-gradient(#26190F,#1E140C);
+  --em-soft: #473418;
+  --em-strong: #D9A441;
+  --em-strong2: #E3BE7B;
+}
+
+/* word emphasis */
+.ui-mark{background:var(--accent);color:var(--on-accent);padding:0 .15em;border-radius:.15em}

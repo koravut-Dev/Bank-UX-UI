@@ -1,0 +1,84 @@
+/* Style: Hand-drawn / Organic (วาดมือและออร์แกนิก)
+   มุมไม่สมมาตรเหมือนวาดมือ เงาเอียงเล็กน้อย โทนกระดาษและเขียวอ่อน
+   Covers: มุมโค้งไม่เท่ากัน ฟอนต์หัวข้อลายมือที่มีอักษรไทย (Itim) เงา 3px
+   Still yours to add: ภาพวาดมือและลายเส้นไม่เรียบต้องใส่เอง
+   Caution: ไม่มี
+   Word emphasis (.ui-mark): circle
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Itim, Mali, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Itim&family=Mali:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="hand-drawn.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #3B2F2F;
+  --c-paper: #FBF6EA;
+  --c-accent: #7BAE7F;
+  --on-accent: #2B2020;
+  --surface: #FFFDF6;
+  --muted: #5E5047;
+  --line: #5A4A3F;
+  --shadow-color: #5A4A3F;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  --bw: 2px;
+  --offset: 3px;
+  --elev: 3px 3px 0 var(--shadow-color);
+  --elev-hover: 4px 4px 0 var(--shadow-color);
+  --elev-press: 0 0 0 var(--shadow-color);
+  --hover-lift: -1px;
+  --press-shift: 3px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Itim",system-ui,sans-serif;
+  --font-body: "Mali",system-ui,sans-serif;
+  --font-mono: "Space Mono","Mali",ui-monospace,monospace;
+  --heading-weight: 400;
+  --mark-kind: circle;
+  --em-soft: #DFE6D2;
+  --em-strong: #5E755B;
+  --em-strong2: #505949;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1F1A17;
+    --fg: #F4EBDD;
+    --surface: #2A2420;
+    --muted: #CDBFAE;
+    --line: #BFA98F;
+    --accent: #9CCB9F;
+    --on-accent: #1F1A17;
+    --focus: #C8E6CA;
+    --shadow-color: #BFA98F;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --em-soft: #3B4135;
+    --em-strong: #9CCB9F;
+    --em-strong2: #BFD8B8;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1F1A17;
+  --fg: #F4EBDD;
+  --surface: #2A2420;
+  --muted: #CDBFAE;
+  --line: #BFA98F;
+  --accent: #9CCB9F;
+  --on-accent: #1F1A17;
+  --focus: #C8E6CA;
+  --shadow-color: #BFA98F;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --em-soft: #3B4135;
+  --em-strong: #9CCB9F;
+  --em-strong2: #BFD8B8;
+}
+
+/* word emphasis */
+.ui-mark{position:relative;padding:0 .3em}
+.ui-mark::after{content:"";position:absolute;inset:-.1em -.05em;border:.08em solid var(--em-strong);
+  border-radius:50% 45% 55% 48%/60% 50% 55% 45%;transform:rotate(-2deg);pointer-events:none}

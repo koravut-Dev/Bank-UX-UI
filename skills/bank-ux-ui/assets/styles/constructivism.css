@@ -1,0 +1,91 @@
+/* Style: Constructivism (คอนสตรัคติวิสต์)
+   แดง-ดำ-ครีม เส้นหนาเด็ดขาด ตัวพิมพ์ใหญ่หนัก สไตล์โปสเตอร์โซเวียต
+   Covers: ขอบหนา 3px เหลี่ยม ตัวพิมพ์ใหญ่หนัก ฟอนต์ Oswald
+   Still yours to add: เส้นทแยงและรูปทรงเอียงเป็นกราฟิกต้องทำเอง
+   Caution: ฟอนต์ Oswald ไม่มีอักษรไทย ใช้ Mitr แทน
+   Word emphasis (.ui-mark): block
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Oswald, Mitr, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Mitr:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="constructivism.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #1A1A1A;
+  --c-paper: #E8E0D0;
+  --c-accent: #D2232A;
+  --on-accent: #FFFFFF;
+  --surface: #F5EFE2;
+  --muted: #4A453C;
+  --line: #1A1A1A;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 0px;
+  --bw: 3px;
+  --offset: 0px;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --font-display: "Oswald","Mitr",system-ui,sans-serif;
+  --font-body: "Mitr",system-ui,sans-serif;
+  --font-mono: "Space Mono","Mitr",ui-monospace,monospace;
+  --heading-weight: 700;
+  --heading-case: uppercase;
+  --mark-kind: block;
+  --em-soft: #E3B6AB;
+  --em-strong: #C02228;
+  --em-strong2: #7E1F22;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1A1A1A;
+    --fg: #E8E0D0;
+    --surface: #262626;
+    --muted: #C2BAA8;
+    --line: #E8E0D0;
+    --accent: #FF4B52;
+    --on-accent: #1A1A1A;
+    --focus: #FF4B52;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: none;
+    --elev-hover: none;
+    --elev-press: none;
+    --hover-lift: 0px;
+    --press-shift: 1px;
+    --em-soft: #4C2526;
+    --em-strong: #FF4B52;
+    --em-strong2: #F68784;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1A1A1A;
+  --fg: #E8E0D0;
+  --surface: #262626;
+  --muted: #C2BAA8;
+  --line: #E8E0D0;
+  --accent: #FF4B52;
+  --on-accent: #1A1A1A;
+  --focus: #FF4B52;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --em-soft: #4C2526;
+  --em-strong: #FF4B52;
+  --em-strong2: #F68784;
+}
+
+/* word emphasis */
+.ui-mark{background:var(--accent);color:var(--on-accent);padding:0 .15em;border-radius:.15em}

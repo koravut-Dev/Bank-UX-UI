@@ -1,0 +1,90 @@
+/* Style: Japandi (จาปันดี)
+   ผสมความเรียบแบบญี่ปุ่นกับอบอุ่นแบบสแกนดิเนเวีย สีไม้ ครีม ฟอนต์เซอริฟบาง
+   Covers: โทนไม้และครีม มุมเล็ก ขอบบาง ฟอนต์เซอริฟไทย
+   Still yours to add: ภาพวัสดุธรรมชาติต้องใส่เอง
+   Caution: ไม่มี
+   Word emphasis (.ui-mark): thick
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Trirong, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Trirong:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="japandi.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #2F2A25;
+  --c-paper: #EFE8DC;
+  --c-accent: #8C6A4F;
+  --on-accent: #FFFFFF;
+  --surface: #F8F3EA;
+  --muted: #5B5146;
+  --line: #6F6254;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 6px;
+  --bw: 1px;
+  --offset: 0px;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --font-display: "Trirong",serif;
+  --font-body: "Trirong",serif;
+  --font-mono: "Space Mono","Trirong",ui-monospace,monospace;
+  --heading-weight: 600;
+  --mark-kind: thick;
+  --em-soft: #D9CCBD;
+  --em-strong: #7E6049;
+  --em-strong2: #5E4A3B;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1F1B17;
+    --fg: #EFE8DC;
+    --surface: #29241F;
+    --muted: #C2B8A8;
+    --line: #9C8F7E;
+    --accent: #C9A67F;
+    --on-accent: #1F1B17;
+    --focus: #E3C9A6;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: none;
+    --elev-hover: none;
+    --elev-press: none;
+    --hover-lift: 0px;
+    --press-shift: 1px;
+    --em-soft: #443A2E;
+    --em-strong: #C9A67F;
+    --em-strong2: #D8C0A4;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1F1B17;
+  --fg: #EFE8DC;
+  --surface: #29241F;
+  --muted: #C2B8A8;
+  --line: #9C8F7E;
+  --accent: #C9A67F;
+  --on-accent: #1F1B17;
+  --focus: #E3C9A6;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --em-soft: #443A2E;
+  --em-strong: #C9A67F;
+  --em-strong2: #D8C0A4;
+}
+
+/* word emphasis */
+.ui-mark{text-decoration:underline;text-decoration-color:var(--em-strong);text-decoration-thickness:.16em;text-underline-offset:.14em;text-decoration-skip-ink:none}

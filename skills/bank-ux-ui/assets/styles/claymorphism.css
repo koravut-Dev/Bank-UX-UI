@@ -1,0 +1,91 @@
+/* Style: Claymorphism (เคลย์มอร์ฟิซึม)
+   ก้อนดินเหนียวสามมิติ มุมกลมมาก เงาในและนอกนุ่ม สีพาสเทล
+   Covers: เงาใน-นอกซ้อน มุม 24px สีชมพูพาสเทล
+   Still yours to add: ไอคอนหรือภาพ 3 มิติแบบดินเหนียวต้องใส่เอง
+   Caution: ไม่มี
+   Word emphasis (.ui-mark): wavy
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Fredoka, Mali, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Mali:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="claymorphism.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #2E1A47;
+  --c-paper: #FFF1F7;
+  --c-accent: #FF7AB6;
+  --on-accent: #2E1A47;
+  --muted: #5E4A73;
+  --line: #7A5C99;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 24px;
+  --bw: 2px;
+  --offset: 0px;
+  --elev: inset -4px -4px 8px rgba(0,0,0,.10), inset 4px 4px 8px rgba(255,255,255,.9), 6px 8px 16px rgba(120,60,140,.25);
+  --elev-hover: inset -4px -4px 8px rgba(0,0,0,.10), inset 4px 4px 8px rgba(255,255,255,.9), 8px 10px 20px rgba(120,60,140,.30);
+  --elev-press: inset 4px 4px 8px rgba(0,0,0,.18);
+  --hover-lift: -1px;
+  --press-shift: 1px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Fredoka","Mali",system-ui,sans-serif;
+  --font-body: "Mali",system-ui,sans-serif;
+  --font-mono: "Space Mono","Mali",ui-monospace,monospace;
+  --heading-weight: 700;
+  --mark-kind: wavy;
+  --em-soft: #FFD7E9;
+  --em-strong: #A14F84;
+  --em-strong2: #733A6C;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1E1230;
+    --fg: #FBEFFA;
+    --surface: #2D1B45;
+    --muted: #D1BDE6;
+    --line: #A98AD1;
+    --accent: #FF8EC3;
+    --on-accent: #1E1230;
+    --focus: #FFC2E0;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: inset 3px 3px 6px rgba(255,255,255,.10), inset -3px -3px 6px rgba(0,0,0,.35), 6px 8px 16px rgba(0,0,0,.5);
+    --elev-hover: inset 3px 3px 6px rgba(255,255,255,.12), inset -3px -3px 6px rgba(0,0,0,.35), 8px 10px 20px rgba(0,0,0,.55);
+    --elev-press: inset 4px 4px 8px rgba(0,0,0,.5);
+    --hover-lift: -1px;
+    --press-shift: 1px;
+    --em-soft: #502D50;
+    --em-strong: #FF8EC3;
+    --em-strong2: #FDB5D9;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1E1230;
+  --fg: #FBEFFA;
+  --surface: #2D1B45;
+  --muted: #D1BDE6;
+  --line: #A98AD1;
+  --accent: #FF8EC3;
+  --on-accent: #1E1230;
+  --focus: #FFC2E0;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: inset 3px 3px 6px rgba(255,255,255,.10), inset -3px -3px 6px rgba(0,0,0,.35), 6px 8px 16px rgba(0,0,0,.5);
+  --elev-hover: inset 3px 3px 6px rgba(255,255,255,.12), inset -3px -3px 6px rgba(0,0,0,.35), 8px 10px 20px rgba(0,0,0,.55);
+  --elev-press: inset 4px 4px 8px rgba(0,0,0,.5);
+  --hover-lift: -1px;
+  --press-shift: 1px;
+  --em-soft: #502D50;
+  --em-strong: #FF8EC3;
+  --em-strong2: #FDB5D9;
+}
+
+/* word emphasis */
+.ui-mark{text-decoration:underline wavy var(--em-strong);text-decoration-thickness:.1em;text-underline-offset:.2em;text-decoration-skip-ink:none}

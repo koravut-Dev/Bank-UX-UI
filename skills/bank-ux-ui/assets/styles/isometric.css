@@ -1,0 +1,90 @@
+/* Style: Isometric (ไอโซเมตริก)
+   องค์ประกอบดูหนาเป็นแท่ง เงาเป็นขั้นบันไดทแยงให้ความรู้สึกสามมิติเทียม
+   Covers: เงาซ้อนหลายชั้นทแยงเหมือนความหนา กดแล้วยุบลงชั้นเดียว
+   Still yours to add: ภาพประกอบไอโซเมตริกต้องวาดหรือใส่เอง
+   Caution: ไม่มี
+   Word emphasis (.ui-mark): block
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Bai Jamjuree, JetBrains Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="isometric.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #0E2A47;
+  --c-paper: #EEF6FF;
+  --c-accent: #FF9F1C;
+  --on-accent: #0E2A47;
+  --muted: #3E5C7A;
+  --line: #0E2A47;
+  --shadow-color: #1D4E89;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 4px;
+  --bw: 2px;
+  --offset: 6px;
+  --elev: 1px 1px 0 #1D4E89, 2px 2px 0 #1D4E89, 3px 3px 0 #1D4E89, 4px 4px 0 #1D4E89, 5px 5px 0 #1D4E89, 6px 6px 0 #1D4E89;
+  --elev-hover: 1px 1px 0 #1D4E89, 2px 2px 0 #1D4E89, 3px 3px 0 #1D4E89, 4px 4px 0 #1D4E89, 5px 5px 0 #1D4E89, 6px 6px 0 #1D4E89, 7px 7px 0 #1D4E89;
+  --elev-press: 1px 1px 0 #1D4E89;
+  --hover-lift: -1px;
+  --press-shift: 5px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Bai Jamjuree",system-ui,sans-serif;
+  --font-body: "Bai Jamjuree",system-ui,sans-serif;
+  --font-mono: "JetBrains Mono","Bai Jamjuree",ui-monospace,monospace;
+  --mark-kind: block;
+  --em-soft: #F2E3CD;
+  --em-strong: #876532;
+  --em-strong2: #574D3A;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #08182B;
+    --fg: #EAF4FF;
+    --surface: #102A47;
+    --muted: #A9C3E0;
+    --line: #7FB0E8;
+    --accent: #FFB347;
+    --on-accent: #08182B;
+    --focus: #FFD08A;
+    --shadow-color: #4A8FE0;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: 1px 1px 0 #4A8FE0, 2px 2px 0 #4A8FE0, 3px 3px 0 #4A8FE0, 4px 4px 0 #4A8FE0, 5px 5px 0 #4A8FE0, 6px 6px 0 #4A8FE0;
+    --elev-hover: 1px 1px 0 #4A8FE0, 2px 2px 0 #4A8FE0, 3px 3px 0 #4A8FE0, 4px 4px 0 #4A8FE0, 5px 5px 0 #4A8FE0, 6px 6px 0 #4A8FE0, 7px 7px 0 #4A8FE0;
+    --elev-press: 1px 1px 0 #4A8FE0;
+    --hover-lift: -1px;
+    --press-shift: 5px;
+    --em-soft: #3E3A31;
+    --em-strong: #FFB347;
+    --em-strong2: #F7CD91;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #08182B;
+  --fg: #EAF4FF;
+  --surface: #102A47;
+  --muted: #A9C3E0;
+  --line: #7FB0E8;
+  --accent: #FFB347;
+  --on-accent: #08182B;
+  --focus: #FFD08A;
+  --shadow-color: #4A8FE0;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: 1px 1px 0 #4A8FE0, 2px 2px 0 #4A8FE0, 3px 3px 0 #4A8FE0, 4px 4px 0 #4A8FE0, 5px 5px 0 #4A8FE0, 6px 6px 0 #4A8FE0;
+  --elev-hover: 1px 1px 0 #4A8FE0, 2px 2px 0 #4A8FE0, 3px 3px 0 #4A8FE0, 4px 4px 0 #4A8FE0, 5px 5px 0 #4A8FE0, 6px 6px 0 #4A8FE0, 7px 7px 0 #4A8FE0;
+  --elev-press: 1px 1px 0 #4A8FE0;
+  --hover-lift: -1px;
+  --press-shift: 5px;
+  --em-soft: #3E3A31;
+  --em-strong: #FFB347;
+  --em-strong2: #F7CD91;
+}
+
+/* word emphasis */
+.ui-mark{background:var(--accent);color:var(--on-accent);padding:0 .15em;border-radius:.15em}

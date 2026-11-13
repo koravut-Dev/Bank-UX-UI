@@ -1,0 +1,89 @@
+/* Style: Modernism (โมเดิร์นนิสม์)
+   ใช้งานนำความงาม เทาอุ่นกับน้ำเงินใช้งาน เหลี่ยมนุ่ม ไม่ประดับ
+   Covers: ขอบบาง ไม่มีเงา น้ำเงินเข้มบนกระดาษอุ่น
+   Still yours to add: ไม่ต้องเพิ่ม
+   Caution: ใกล้เคียง flat และ swiss แต่โทนอุ่นกว่า
+   Word emphasis (.ui-mark): thick
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Sarabun, JetBrains Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="modernism.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #222222;
+  --c-paper: #F4F1EA;
+  --c-accent: #0F5C8C;
+  --on-accent: #FFFFFF;
+  --muted: #4F4B44;
+  --line: #77726A;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 2px;
+  --bw: 1px;
+  --offset: 0px;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --font-display: "Sarabun",system-ui,sans-serif;
+  --font-body: "Sarabun",system-ui,sans-serif;
+  --font-mono: "JetBrains Mono","Sarabun",ui-monospace,monospace;
+  --heading-weight: 700;
+  --mark-kind: thick;
+  --em-soft: #C2D0D5;
+  --em-strong: #0F5C8C;
+  --em-strong2: #174562;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1B1A18;
+    --fg: #F4F1EA;
+    --surface: #252320;
+    --muted: #BDB8AE;
+    --line: #8F8A80;
+    --accent: #6FB8E6;
+    --on-accent: #10202C;
+    --focus: #9AD0F0;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: none;
+    --elev-hover: none;
+    --elev-press: none;
+    --hover-lift: 0px;
+    --press-shift: 1px;
+    --em-soft: #2D3D45;
+    --em-strong: #6FB8E6;
+    --em-strong2: #A4CFE8;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1B1A18;
+  --fg: #F4F1EA;
+  --surface: #252320;
+  --muted: #BDB8AE;
+  --line: #8F8A80;
+  --accent: #6FB8E6;
+  --on-accent: #10202C;
+  --focus: #9AD0F0;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --em-soft: #2D3D45;
+  --em-strong: #6FB8E6;
+  --em-strong2: #A4CFE8;
+}
+
+/* word emphasis */
+.ui-mark{text-decoration:underline;text-decoration-color:var(--em-strong);text-decoration-thickness:.16em;text-underline-offset:.14em;text-decoration-skip-ink:none}

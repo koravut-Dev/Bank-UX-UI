@@ -1,0 +1,85 @@
+/* Style: Pop art (ป๊อปอาร์ต)
+   ขอบดำหนา สีแดงเหลืองสด ลายจุดฮาล์ฟโทน เงาแข็งดำ ตัวพิมพ์ใหญ่หนัก
+   Covers: ขอบ 4px เงา 6px พื้นเหลืองลายจุดชมพู ตัวพิมพ์ใหญ่
+   Still yours to add: ภาพฮาล์ฟโทนและกรอบคำพูดต้องใส่เอง
+   Caution: ฟอนต์ Bangers ไม่มีอักษรไทย ใช้ Mali แทน ลายจุดต้องจางไม่รบกวนการอ่าน
+   Word emphasis (.ui-mark): block
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Bangers, Mali, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Mali:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="pop-art.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #111111;
+  --c-paper: #FFF3B0;
+  --c-accent: #E4002B;
+  --on-accent: #FFFFFF;
+  --muted: #3D3D3D;
+  --line: #111111;
+  --shadow-color: #111111;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 0px;
+  --bw: 4px;
+  --offset: 6px;
+  --page-bg: radial-gradient(#FFB3D1 1.5px,transparent 2px) 0 0/10px 10px,#FFF3B0;
+  --elev: 6px 6px 0 var(--shadow-color);
+  --elev-hover: 7px 7px 0 var(--shadow-color);
+  --elev-press: 0 0 0 var(--shadow-color);
+  --hover-lift: -1px;
+  --press-shift: 6px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Bangers","Mali",system-ui,sans-serif;
+  --font-body: "Mali",system-ui,sans-serif;
+  --font-mono: "Space Mono","Mali",ui-monospace,monospace;
+  --heading-weight: 400;
+  --heading-case: uppercase;
+  --mark-kind: block;
+  --em-soft: #F9BE93;
+  --em-strong: #D9012A;
+  --em-strong2: #890720;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101010;
+    --fg: #FFF3B0;
+    --surface: #1C1C1C;
+    --muted: #E0D78F;
+    --line: #FFF3B0;
+    --accent: #FF4D6D;
+    --on-accent: #101010;
+    --focus: #FFF200;
+    --shadow-color: #FFF200;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --page-bg: var(--bg);
+    --em-soft: #451D24;
+    --em-strong: #FF4D6D;
+    --em-strong2: #FF8F88;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101010;
+  --fg: #FFF3B0;
+  --surface: #1C1C1C;
+  --muted: #E0D78F;
+  --line: #FFF3B0;
+  --accent: #FF4D6D;
+  --on-accent: #101010;
+  --focus: #FFF200;
+  --shadow-color: #FFF200;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --page-bg: var(--bg);
+  --em-soft: #451D24;
+  --em-strong: #FF4D6D;
+  --em-strong2: #FF8F88;
+}
+
+/* word emphasis */
+.ui-mark{background:var(--accent);color:var(--on-accent);padding:0 .15em;border-radius:.15em}

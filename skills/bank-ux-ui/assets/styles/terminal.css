@@ -1,0 +1,89 @@
+/* Style: Terminal (hacker) (เทอร์มินัล)
+   ตัวอักษรเขียวบนพื้นดำ ฟอนต์โมโนสเปซ ไม่มีมุมโค้ง ไม่มีเงา
+   Covers: ฟอนต์โมโนสเปซทั้งหน้า สีเขียวเทอร์มินัลโหมดมืด และกระดาษเขียวอ่อนโหมดสว่าง
+   Still yours to add: เคอร์เซอร์กะพริบและเอฟเฟกต์พิมพ์ทีละตัวต้องทำเอง
+   Caution: ฟอนต์โมโนที่เลือกไม่มีอักษรไทย ภาษาไทยใช้ Sarabun แทน
+   Word emphasis (.ui-mark): block
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Share Tech Mono, Sarabun, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Sarabun:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="terminal.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #0B2E13;
+  --c-paper: #E9F7EA;
+  --c-accent: #00B84A;
+  --on-accent: #001A08;
+  --muted: #2F5A3A;
+  --line: #0B6B2A;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 0px;
+  --bw: 1px;
+  --offset: 0px;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --font-display: "Share Tech Mono","Sarabun",ui-monospace,monospace;
+  --font-body: "Space Mono","Sarabun",ui-monospace,monospace;
+  --font-mono: "Space Mono","Sarabun",ui-monospace,monospace;
+  --heading-weight: 400;
+  --mark-kind: block;
+  --em-soft: #B6E9C7;
+  --em-strong: #048134;
+  --em-strong2: #076027;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #020B04;
+    --fg: #7CFF9B;
+    --surface: #06160A;
+    --muted: #5FD27A;
+    --line: #2FB457;
+    --accent: #39FF6A;
+    --on-accent: #020B04;
+    --focus: #B6FFC7;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: none;
+    --elev-hover: none;
+    --elev-press: none;
+    --hover-lift: 0px;
+    --press-shift: 1px;
+    --em-soft: #0E411A;
+    --em-strong: #39FF6A;
+    --em-strong2: #54FF7E;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #020B04;
+  --fg: #7CFF9B;
+  --surface: #06160A;
+  --muted: #5FD27A;
+  --line: #2FB457;
+  --accent: #39FF6A;
+  --on-accent: #020B04;
+  --focus: #B6FFC7;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --em-soft: #0E411A;
+  --em-strong: #39FF6A;
+  --em-strong2: #54FF7E;
+}
+
+/* word emphasis */
+.ui-mark{background:var(--accent);color:var(--on-accent);padding:0 .15em;border-radius:.15em}

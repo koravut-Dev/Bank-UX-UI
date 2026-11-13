@@ -1,0 +1,84 @@
+/* Style: Mid-century modern (มิดเซ็นจูรีโมเดิร์น)
+   ส้มไหม้กับทีลบนครีม มุมโค้งปานกลาง ฟอนต์เซอริฟหนาย้อนยุค
+   Covers: พาเลตต์ส้มไหม้-ทีล เงาทีล มุม 14px ฟอนต์ DM Serif Display
+   Still yours to add: ลายบูมเมอแรงและรูปทรงอะตอมต้องใส่เอง
+   Caution: ฟอนต์ DM Serif Display ไม่มีอักษรไทย ใช้ Pridi แทน
+   Word emphasis (.ui-mark): circle
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): DM Serif Display, Pridi, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Pridi:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="mid-century.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #2B2B2B;
+  --c-paper: #F3E9D2;
+  --c-accent: #D9822B;
+  --on-accent: #2B2B2B;
+  --surface: #FBF4E2;
+  --muted: #5A5242;
+  --line: #6B5E45;
+  --shadow-color: #2F6F73;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 14px;
+  --bw: 2px;
+  --offset: 3px;
+  --elev: 3px 3px 0 var(--shadow-color);
+  --elev-hover: 4px 4px 0 var(--shadow-color);
+  --elev-press: 0 0 0 var(--shadow-color);
+  --hover-lift: -1px;
+  --press-shift: 3px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "DM Serif Display","Pridi",serif;
+  --font-body: "Pridi",serif;
+  --font-mono: "Space Mono","Pridi",ui-monospace,monospace;
+  --heading-weight: 400;
+  --mark-kind: circle;
+  --em-soft: #EDD2AD;
+  --em-strong: #8B5B2B;
+  --em-strong2: #65482B;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1F2A2B;
+    --fg: #F3E9D2;
+    --surface: #2A3839;
+    --muted: #CBC2AB;
+    --line: #D9A441;
+    --accent: #F0A04B;
+    --on-accent: #1F2A2B;
+    --focus: #F6C177;
+    --shadow-color: #2F8F8F;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --em-soft: #4D4432;
+    --em-strong: #F0A04B;
+    --em-strong2: #F1BD81;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1F2A2B;
+  --fg: #F3E9D2;
+  --surface: #2A3839;
+  --muted: #CBC2AB;
+  --line: #D9A441;
+  --accent: #F0A04B;
+  --on-accent: #1F2A2B;
+  --focus: #F6C177;
+  --shadow-color: #2F8F8F;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --em-soft: #4D4432;
+  --em-strong: #F0A04B;
+  --em-strong2: #F1BD81;
+}
+
+/* word emphasis */
+.ui-mark{position:relative;padding:0 .3em}
+.ui-mark::after{content:"";position:absolute;inset:-.1em -.05em;border:.08em solid var(--em-strong);
+  border-radius:50% 45% 55% 48%/60% 50% 55% 45%;transform:rotate(-2deg);pointer-events:none}

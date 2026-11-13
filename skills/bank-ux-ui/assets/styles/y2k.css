@@ -1,0 +1,105 @@
+/* Style: Y2K / Frutiger Aero (วายทูเค)
+   ปี 2000 พื้นฟ้าใส ปุ่มแวววาวไล่สี มุมกลมมาก เงาสะท้อนแสง
+   Covers: ปุ่มไล่สีมันวาว พื้นหลังท้องฟ้า เงาฟ้า
+   Still yours to add: ฟองอากาศ ใบหญ้า ภาพถ่ายธรรมชาติแบบ Aero ต้องใส่เอง
+   Caution: ปุ่มมันวาวต้องผ่านคอนทราสต์ทุกสีหยุด ซึ่งจำกัดให้ใช้ฟ้าอ่อนเท่านั้น
+   Word emphasis (.ui-mark): gradient
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Fredoka, Prompt, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Prompt:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="y2k.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #0B3A5B;
+  --c-paper: #E6F6FF;
+  --c-accent: #19B5FE;
+  --on-accent: #0B3A5B;
+  --surface: #F4FBFF;
+  --muted: #2F5878;
+  --line: #0B6FA8;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 22px;
+  --bw: 1px;
+  --offset: 0px;
+  --elev: 0 4px 10px rgba(11,111,168,.35), inset 0 1px 0 #FFFFFF;
+  --elev-hover: 0 6px 14px rgba(11,111,168,.42), inset 0 1px 0 #FFFFFF;
+  --elev-press: inset 0 2px 4px rgba(11,111,168,.45);
+  --hover-lift: -1px;
+  --press-shift: 1px;
+  --btn-bg: linear-gradient(#FFFFFF,#CFEFFF);
+  --card-bg: linear-gradient(#FFFFFF,#EAF7FF);
+  --primary-bg: linear-gradient(#8FE0FF,#19B5FE);
+  --page-bg: linear-gradient(#BFE9FF,#E6F6FF);
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Fredoka","Prompt",system-ui,sans-serif;
+  --font-body: "Prompt",system-ui,sans-serif;
+  --font-mono: "Space Mono","Prompt",ui-monospace,monospace;
+  --heading-weight: 700;
+  --mark-kind: gradient;
+  --em-soft: #B9E8FF;
+  --em-strong: #1171A4;
+  --em-strong2: #0F5B87;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #04223A;
+    --fg: #E6F6FF;
+    --surface: #0B3558;
+    --muted: #A8D2EC;
+    --line: #5FB6EA;
+    --accent: #5FD0FF;
+    --on-accent: #04223A;
+    --focus: #A8E6FF;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: 0 4px 10px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.2);
+    --elev-hover: 0 6px 14px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.25);
+    --elev-press: inset 0 2px 4px rgba(0,0,0,.5);
+    --hover-lift: -1px;
+    --press-shift: 1px;
+    --btn-bg: linear-gradient(#124A78,#0B3558);
+    --card-bg: linear-gradient(#0F4170,#0B3558);
+    --primary-bg: linear-gradient(#9BE3FF,#5FD0FF);
+    --page-bg: linear-gradient(#04223A,#082F52);
+    --em-soft: #184865;
+    --em-strong: #5FD0FF;
+    --em-strong2: #95DFFF;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #04223A;
+  --fg: #E6F6FF;
+  --surface: #0B3558;
+  --muted: #A8D2EC;
+  --line: #5FB6EA;
+  --accent: #5FD0FF;
+  --on-accent: #04223A;
+  --focus: #A8E6FF;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: 0 4px 10px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.2);
+  --elev-hover: 0 6px 14px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.25);
+  --elev-press: inset 0 2px 4px rgba(0,0,0,.5);
+  --hover-lift: -1px;
+  --press-shift: 1px;
+  --btn-bg: linear-gradient(#124A78,#0B3558);
+  --card-bg: linear-gradient(#0F4170,#0B3558);
+  --primary-bg: linear-gradient(#9BE3FF,#5FD0FF);
+  --page-bg: linear-gradient(#04223A,#082F52);
+  --em-soft: #184865;
+  --em-strong: #5FD0FF;
+  --em-strong2: #95DFFF;
+}
+
+/* word emphasis */
+.ui-mark{background-image:linear-gradient(90deg,var(--em-strong),var(--em-strong2));-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (forced-colors:active){.ui-mark{color:CanvasText;background:none}}

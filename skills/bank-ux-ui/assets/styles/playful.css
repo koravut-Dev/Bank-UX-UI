@@ -1,0 +1,81 @@
+/* Style: Playful / Cartoon (สนุกสนานแบบการ์ตูน)
+   ขอบหนา 3px เงาแข็งสีเด่น สีชมพูสด ฟอนต์กลมน่ารัก
+   Covers: ขอบหนา เงา 5px มุม 20px สีชมพูบนครีม
+   Still yours to add: ตัวการ์ตูนและภาพประกอบต้องใส่เอง
+   Caution: คล้าย neo-brutalism แต่โค้งและสดกว่า
+   Word emphasis (.ui-mark): wavy
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Fredoka, Mali, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Mali:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="playful.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #1A1033;
+  --c-paper: #FFF9E6;
+  --c-accent: #FF5D8F;
+  --on-accent: #1A1033;
+  --muted: #4D4466;
+  --line: #1A1033;
+  --shadow-color: #1A1033;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 20px;
+  --bw: 3px;
+  --offset: 5px;
+  --elev: 5px 5px 0 var(--shadow-color);
+  --elev-hover: 6px 6px 0 var(--shadow-color);
+  --elev-press: 0 0 0 var(--shadow-color);
+  --hover-lift: -1px;
+  --press-shift: 5px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Fredoka","Mali",system-ui,sans-serif;
+  --font-body: "Mali",system-ui,sans-serif;
+  --font-mono: "Space Mono","Mali",ui-monospace,monospace;
+  --heading-weight: 700;
+  --mark-kind: wavy;
+  --em-soft: #FFD7D3;
+  --em-strong: #BA4673;
+  --em-strong2: #7A3059;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1A1033;
+    --fg: #FFF9E6;
+    --surface: #2A1B4D;
+    --muted: #D3C8EE;
+    --line: #FFF9E6;
+    --accent: #FF7BA6;
+    --on-accent: #1A1033;
+    --focus: #FFD93D;
+    --shadow-color: #FFD93D;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --em-soft: #4C284C;
+    --em-strong: #FF7BA6;
+    --em-strong2: #FFADC0;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1A1033;
+  --fg: #FFF9E6;
+  --surface: #2A1B4D;
+  --muted: #D3C8EE;
+  --line: #FFF9E6;
+  --accent: #FF7BA6;
+  --on-accent: #1A1033;
+  --focus: #FFD93D;
+  --shadow-color: #FFD93D;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --em-soft: #4C284C;
+  --em-strong: #FF7BA6;
+  --em-strong2: #FFADC0;
+}
+
+/* word emphasis */
+.ui-mark{text-decoration:underline wavy var(--em-strong);text-decoration-thickness:.1em;text-underline-offset:.2em;text-decoration-skip-ink:none}

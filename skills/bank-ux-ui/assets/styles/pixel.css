@@ -1,0 +1,81 @@
+/* Style: Pixel art / 8-bit (พิกเซล 8 บิต)
+   ขอบหนา 4px มุมเหลี่ยม เงาแข็ง ฟอนต์พิกเซล สีเหลืองเกม
+   Covers: ขอบ 4px เงา 4px เหลี่ยม ฟอนต์หัวข้อพิกเซล
+   Still yours to add: สไปรต์ ไอคอนพิกเซล และ image-rendering: pixelated ต้องใส่เอง
+   Caution: ฟอนต์ Press Start 2P ไม่มีอักษรไทยและอ่านยากเมื่อตัวเล็ก ใช้กับหัวข้อสั้นเท่านั้น
+   Word emphasis (.ui-mark): block
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Press Start 2P, K2D, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=K2D:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="pixel.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #1B1B2F;
+  --c-paper: #F8F0D8;
+  --c-accent: #FFCC00;
+  --on-accent: #1B1B2F;
+  --muted: #4A4A63;
+  --line: #1B1B2F;
+  --shadow-color: #1B1B2F;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 0px;
+  --bw: 4px;
+  --offset: 4px;
+  --elev: 4px 4px 0 var(--shadow-color);
+  --elev-hover: 5px 5px 0 var(--shadow-color);
+  --elev-press: 0 0 0 var(--shadow-color);
+  --hover-lift: -1px;
+  --press-shift: 4px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Press Start 2P","K2D",system-ui,sans-serif;
+  --font-body: "K2D",system-ui,sans-serif;
+  --font-mono: "Space Mono","K2D",ui-monospace,monospace;
+  --heading-weight: 400;
+  --mark-kind: block;
+  --em-soft: #FAE8A8;
+  --em-strong: #826B1A;
+  --em-strong2: #594B22;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1B1B2F;
+    --fg: #F8F0D8;
+    --surface: #2A2A4A;
+    --muted: #C8C0A8;
+    --line: #F8F0D8;
+    --accent: #FFCC00;
+    --on-accent: #1B1B2F;
+    --focus: #FFCC00;
+    --shadow-color: #FFCC00;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --em-soft: #4D4225;
+    --em-strong: #FFCC00;
+    --em-strong2: #FCDA56;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1B1B2F;
+  --fg: #F8F0D8;
+  --surface: #2A2A4A;
+  --muted: #C8C0A8;
+  --line: #F8F0D8;
+  --accent: #FFCC00;
+  --on-accent: #1B1B2F;
+  --focus: #FFCC00;
+  --shadow-color: #FFCC00;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --em-soft: #4D4225;
+  --em-strong: #FFCC00;
+  --em-strong2: #FCDA56;
+}
+
+/* word emphasis */
+.ui-mark{background:var(--accent);color:var(--on-accent);padding:0 .15em;border-radius:.15em}

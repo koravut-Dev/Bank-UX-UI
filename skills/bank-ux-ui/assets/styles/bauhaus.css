@@ -1,0 +1,81 @@
+/* Style: Bauhaus (เบาเฮาส์)
+   สีปฐมภูมิ แดง-น้ำเงิน-เหลือง เรขาคณิตล้วน ขอบหนา เงาแข็งสีน้ำเงิน
+   Covers: ปุ่มแดง เงาน้ำเงิน ขอบ 3px เหลี่ยม ฟอนต์เรขาคณิต
+   Still yours to add: รูปทรงวงกลม สามเหลี่ยม สี่เหลี่ยม เป็นองค์ประกอบกราฟิกต้องใส่เอง
+   Caution: ไม่มี
+   Word emphasis (.ui-mark): block
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Josefin Sans, Kanit, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Kanit:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="bauhaus.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #111111;
+  --c-paper: #F2EFE6;
+  --c-accent: #E02F26;
+  --on-accent: #FFFFFF;
+  --muted: #4A4A44;
+  --line: #111111;
+  --shadow-color: #1D4E9E;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 0px;
+  --bw: 3px;
+  --offset: 6px;
+  --elev: 6px 6px 0 var(--shadow-color);
+  --elev-hover: 7px 7px 0 var(--shadow-color);
+  --elev-press: 0 0 0 var(--shadow-color);
+  --hover-lift: -1px;
+  --press-shift: 6px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Josefin Sans","Kanit",system-ui,sans-serif;
+  --font-body: "Kanit",system-ui,sans-serif;
+  --font-mono: "Space Mono","Kanit",ui-monospace,monospace;
+  --heading-weight: 700;
+  --mark-kind: block;
+  --em-soft: #EEC5BC;
+  --em-strong: #CB2C24;
+  --em-strong2: #81211C;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111111;
+    --fg: #F2EFE6;
+    --surface: #1E1E1E;
+    --muted: #C9C5B8;
+    --line: #F2EFE6;
+    --accent: #FF5A4E;
+    --on-accent: #111111;
+    --focus: #FFD21F;
+    --shadow-color: #FFD21F;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --em-soft: #45211E;
+    --em-strong: #FF5A4E;
+    --em-strong2: #FA968B;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111111;
+  --fg: #F2EFE6;
+  --surface: #1E1E1E;
+  --muted: #C9C5B8;
+  --line: #F2EFE6;
+  --accent: #FF5A4E;
+  --on-accent: #111111;
+  --focus: #FFD21F;
+  --shadow-color: #FFD21F;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --em-soft: #45211E;
+  --em-strong: #FF5A4E;
+  --em-strong2: #FA968B;
+}
+
+/* word emphasis */
+.ui-mark{background:var(--accent);color:var(--on-accent);padding:0 .15em;border-radius:.15em}

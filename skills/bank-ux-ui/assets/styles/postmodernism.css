@@ -1,0 +1,84 @@
+/* Style: Postmodernism (โพสต์โมเดิร์น)
+   ผสมสีและรูปทรงขัดกันอย่างตั้งใจ มุมสลับ เงาสีม่วง ฟอนต์หน้ากว้างหนา
+   Covers: มุมโค้งสลับเหลี่ยม เงาแข็งสีม่วง พื้นโทนครีมกับเขียวอมฟ้า
+   Still yours to add: ลวดลายและวัสดุผสมต้องใส่เอง
+   Caution: ฟอนต์ Abril Fatface ไม่มีอักษรไทย ใช้ Mitr แทน
+   Word emphasis (.ui-mark): brush
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Abril Fatface, Mitr, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Mitr:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="postmodernism.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #1B1B1B;
+  --c-paper: #FFF1E6;
+  --c-accent: #FF6F61;
+  --on-accent: #1B1B1B;
+  --surface: #E8F7F2;
+  --muted: #4F4A47;
+  --line: #1B1B1B;
+  --shadow-color: #6A4C93;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 0 16px 0 16px;
+  --bw: 2px;
+  --offset: 5px;
+  --elev: 5px 5px 0 var(--shadow-color);
+  --elev-hover: 6px 6px 0 var(--shadow-color);
+  --elev-press: 0 0 0 var(--shadow-color);
+  --hover-lift: -1px;
+  --press-shift: 5px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Abril Fatface","Mitr",system-ui,sans-serif;
+  --font-body: "Mitr",system-ui,sans-serif;
+  --font-mono: "Space Mono","Mitr",ui-monospace,monospace;
+  --heading-weight: 400;
+  --mark-kind: brush;
+  --em-soft: #FFD4C9;
+  --em-strong: #AF5249;
+  --em-strong2: #743C37;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #231F20;
+    --fg: #FFF1E6;
+    --surface: #2F2A2C;
+    --muted: #D8CBC1;
+    --line: #FFB4A8;
+    --accent: #FF8A7E;
+    --on-accent: #231F20;
+    --focus: #9AD1D4;
+    --shadow-color: #8E6FC4;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --em-soft: #533735;
+    --em-strong: #FF8A7E;
+    --em-strong2: #FFB3A8;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #231F20;
+  --fg: #FFF1E6;
+  --surface: #2F2A2C;
+  --muted: #D8CBC1;
+  --line: #FFB4A8;
+  --accent: #FF8A7E;
+  --on-accent: #231F20;
+  --focus: #9AD1D4;
+  --shadow-color: #8E6FC4;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --em-soft: #533735;
+  --em-strong: #FF8A7E;
+  --em-strong2: #FFB3A8;
+}
+
+/* word emphasis */
+.ui-mark{position:relative;isolation:isolate;padding:0 .25em;color:var(--on-accent)}
+.ui-mark::before{content:"";position:absolute;inset:8% -2% -4%;z-index:-1;background:var(--accent);
+  clip-path:polygon(0 20%,5% 6%,94% 0,100% 24%,98% 78%,100% 96%,7% 100%,0 80%);transform:rotate(-1.5deg)}

@@ -1,0 +1,40 @@
+/* Bank layer: an optional ADD-ON signature that sits on top of any style in assets/styles/.
+   Purpose: tell people "this is OUR site/system" while the page keeps the look of the universal style it uses
+   (glassmorphism, art deco, swiss, ...). Load it LAST: base.css, then one style file, then this file.
+
+   What it does NOT touch: fonts, shapes, shadows, button motion or palette. It does not restyle .ui-mark either; .bank-mark replaces its use.
+   Load this file only when the user asks for Bank (or their own system's) branding or signature on a named style.
+   What it adds (all small):
+     - .ui-credit__logo and ::selection take the brand accent        (always, when this file is loaded)
+     - .bank-mark    the Bank highlighter for the ONE emphasis word; when this file is loaded, use it INSTEAD of .ui-mark
+     - .bank-stripe  a thin brand bar at the very top of the page; add it by default when this file is loaded, as its own
+                     empty element: <div class="bank-stripe" aria-hidden="true"></div> first in <body> (never a class on header/body)
+     - .bank-tag     a small brand chip; add it only next to a logo image or the site/system name in the page header,
+                     never next to the page heading (Latin text only: it is letter-spaced)
+   Not part of the layer (they belong only to the Bank style in ../identity.css): hard-offset shadow, sink-into-shadow press, Space Grotesk/IBM Plex.
+
+   To brand another system, change only the three tokens below. check-theme.mjs verifies that text on the brand accent
+   reaches 4.5:1. Every element sets its own text color, so contrast does not depend on the style underneath.
+   The "Designed by Bank" credit line and <meta name="author" content="Bank"> are a separate request: add them only when the user asks for the credit.
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --bank-accent: #D7FF3A;
+  --bank-on-accent: #0B0B0F;
+  --bank-stripe-h: 4px;
+}
+
+.ui-credit__logo { background: var(--bank-accent); color: var(--bank-on-accent); }
+::selection { background: var(--bank-accent); color: var(--bank-on-accent); }
+
+.bank-stripe { display: block; height: var(--bank-stripe-h); background: var(--bank-accent); }
+.bank-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font: 700 12px/1 var(--font-mono); letter-spacing: .04em;
+  padding: 6px 10px; border-radius: 999px;
+  background: var(--bank-accent); color: var(--bank-on-accent);
+}
+.bank-mark {
+  background: var(--bank-accent); color: var(--bank-on-accent);
+  padding: 0 .12em; border-radius: .12em;
+}

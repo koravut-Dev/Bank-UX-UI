@@ -1,0 +1,86 @@
+/* Style: Memphis (เมมฟิส)
+   สีสดจัดจ้าน ลายจุด เงาแข็งสีเขียวน้ำทะเล ขอบหนา
+   Covers: ขอบ 3px เงาเขียวทีล พื้นลายจุดอ่อน สีชมพูสด
+   Still yours to add: รูปทรงเรขาคณิตลอยและลายซิกแซกต้องใส่เอง
+   Caution: ลายจุดต้องจางเพียงพอไม่รบกวนการอ่าน ธีมนี้ใช้จุดสีส้มอ่อนมาก
+   Word emphasis (.ui-mark): brush
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Josefin Sans, Mitr, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Mitr:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="memphis.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #111111;
+  --c-paper: #FFF6DB;
+  --c-accent: #FF4F9A;
+  --on-accent: #111111;
+  --muted: #4A4A4A;
+  --line: #111111;
+  --shadow-color: #00B3A4;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 0px;
+  --bw: 3px;
+  --offset: 6px;
+  --page-bg: radial-gradient(#FFDDB0 2px,transparent 2.5px) 0 0/22px 22px,#FFF6DB;
+  --elev: 6px 6px 0 var(--shadow-color);
+  --elev-hover: 7px 7px 0 var(--shadow-color);
+  --elev-press: 0 0 0 var(--shadow-color);
+  --hover-lift: -1px;
+  --press-shift: 6px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Josefin Sans","Mitr",system-ui,sans-serif;
+  --font-body: "Mitr",system-ui,sans-serif;
+  --font-mono: "Space Mono","Mitr",ui-monospace,monospace;
+  --heading-weight: 700;
+  --mark-kind: brush;
+  --em-soft: #FFD1CD;
+  --em-strong: #B83C71;
+  --em-strong2: #752B4B;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1B1B3A;
+    --fg: #FFF6DB;
+    --surface: #28285A;
+    --muted: #D6D0F0;
+    --line: #FFD23F;
+    --accent: #FF6FB1;
+    --on-accent: #1B1B3A;
+    --focus: #FFD23F;
+    --shadow-color: #00D1C1;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --page-bg: var(--bg);
+    --em-soft: #4D2D54;
+    --em-strong: #FF6FB1;
+    --em-strong2: #FFA5C2;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1B1B3A;
+  --fg: #FFF6DB;
+  --surface: #28285A;
+  --muted: #D6D0F0;
+  --line: #FFD23F;
+  --accent: #FF6FB1;
+  --on-accent: #1B1B3A;
+  --focus: #FFD23F;
+  --shadow-color: #00D1C1;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --page-bg: var(--bg);
+  --em-soft: #4D2D54;
+  --em-strong: #FF6FB1;
+  --em-strong2: #FFA5C2;
+}
+
+/* word emphasis */
+.ui-mark{position:relative;isolation:isolate;padding:0 .25em;color:var(--on-accent)}
+.ui-mark::before{content:"";position:absolute;inset:8% -2% -4%;z-index:-1;background:var(--accent);
+  clip-path:polygon(0 20%,5% 6%,94% 0,100% 24%,98% 78%,100% 96%,7% 100%,0 80%);transform:rotate(-1.5deg)}

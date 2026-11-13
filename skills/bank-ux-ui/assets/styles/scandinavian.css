@@ -1,0 +1,91 @@
+/* Style: Scandinavian (สแกนดิเนเวียน)
+   ขาวนวล เทาอุ่น เขียวทีลสงบ เงาเบามาก ไม่รก
+   Covers: ขอบบาง เงาเบา สีเขียวทีลเข้มบนขาวนวล
+   Still yours to add: ไม่ต้องเพิ่ม
+   Caution: ใกล้ minimalism แต่อุ่นและนุ่มกว่า
+   Word emphasis (.ui-mark): color
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Noto Sans Thai, JetBrains Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="scandinavian.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #2D3436;
+  --c-paper: #F7F5F2;
+  --c-accent: #3F6F68;
+  --on-accent: #FFFFFF;
+  --muted: #566061;
+  --line: #7C8483;
+  --shadow-color: #2D3436;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 10px;
+  --bw: 1px;
+  --offset: 0px;
+  --elev: 0 1px 2px rgba(45,52,54,.16), 0 2px 6px rgba(45,52,54,.10);
+  --elev-hover: 0 2px 4px rgba(45,52,54,.20), 0 4px 10px rgba(45,52,54,.12);
+  --elev-press: 0 0 0 rgba(45,52,54,0);
+  --hover-lift: -1px;
+  --press-shift: 1px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Noto Sans Thai",system-ui,sans-serif;
+  --font-body: "Noto Sans Thai",system-ui,sans-serif;
+  --font-mono: "JetBrains Mono","Noto Sans Thai",ui-monospace,monospace;
+  --heading-weight: 600;
+  --mark-kind: color;
+  --em-soft: #CFD8D4;
+  --em-strong: #3F6F68;
+  --em-strong2: #385754;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1E2423;
+    --fg: #F1EEE9;
+    --surface: #283030;
+    --muted: #B9C2BF;
+    --line: #8C9795;
+    --accent: #8FC1B8;
+    --on-accent: #1E2423;
+    --focus: #BFE0D9;
+    --shadow-color: #000000;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: 0 1px 2px rgba(0,0,0,.16), 0 2px 6px rgba(0,0,0,.10);
+    --elev-hover: 0 2px 4px rgba(0,0,0,.20), 0 4px 10px rgba(0,0,0,.12);
+    --elev-press: 0 0 0 rgba(0,0,0,0);
+    --hover-lift: -1px;
+    --press-shift: 1px;
+    --em-soft: #374744;
+    --em-strong: #8FC1B8;
+    --em-strong2: #B6D3CC;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1E2423;
+  --fg: #F1EEE9;
+  --surface: #283030;
+  --muted: #B9C2BF;
+  --line: #8C9795;
+  --accent: #8FC1B8;
+  --on-accent: #1E2423;
+  --focus: #BFE0D9;
+  --shadow-color: #000000;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: 0 1px 2px rgba(0,0,0,.16), 0 2px 6px rgba(0,0,0,.10);
+  --elev-hover: 0 2px 4px rgba(0,0,0,.20), 0 4px 10px rgba(0,0,0,.12);
+  --elev-press: 0 0 0 rgba(0,0,0,0);
+  --hover-lift: -1px;
+  --press-shift: 1px;
+  --em-soft: #374744;
+  --em-strong: #8FC1B8;
+  --em-strong2: #B6D3CC;
+}
+
+/* word emphasis */
+.ui-mark{color:var(--em-strong)}

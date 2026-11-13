@@ -1,0 +1,47 @@
+/* Theme: sunset
+   Keeps the full Bank structure (2px border, hard-offset shadow, press motion) with a warm palette.
+   Usage: <link rel="stylesheet" href="identity.css"> then <link rel="stylesheet" href="sunset.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --id-ink: #1B1022;
+  --id-paper: #FFF4E8;
+  --id-accent: #FF8A2B;
+  --on-accent: #1B1022;
+
+  --muted: #5E4B5C;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1B1022;
+    --fg: #FFF4E8;
+    --muted: #D2BFCB;
+    --surface: #271830;
+    --line: #FFF4E8;
+    --shadow-color: #FF8A2B;
+    --focus: #FF8A2B;
+    --accent: #FF8A2B;
+    --on-accent: #1B1022;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1B1022;
+  --fg: #FFF4E8;
+  --muted: #D2BFCB;
+  --surface: #271830;
+  --line: #FFF4E8;
+  --shadow-color: #FF8A2B;
+  --focus: #FF8A2B;
+  --accent: #FF8A2B;
+  --on-accent: #1B1022;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+}

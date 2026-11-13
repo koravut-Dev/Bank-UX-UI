@@ -1,0 +1,91 @@
+/* Style: Material Design (แมทีเรียล)
+   ชั้นและเงานุ่มแบบ Google สีม่วงอ่อน มุมโค้งกลาง ปุ่มยกขึ้นเมื่อ hover
+   Covers: เงาหลายชั้น มุม 12px พาเลตต์ม่วง ไม่มีเงาแข็ง
+   Still yours to add: state layer และ ripple ต้องเขียนเอง
+   Caution: ธีมนี้ลอกลักษณะ ไม่ใช่ Material 3 เต็มรูปแบบ
+   Word emphasis (.ui-mark): pill
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Noto Sans Thai, Roboto Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="material.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #1C1B1F;
+  --c-paper: #FEF7FF;
+  --c-accent: #6750A4;
+  --on-accent: #FFFFFF;
+  --surface: #FFFBFE;
+  --muted: #49454F;
+  --line: #79747E;
+  --shadow-color: #000000;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 12px;
+  --bw: 1px;
+  --offset: 0px;
+  --elev: 0 1px 3px rgba(0,0,0,.30), 0 4px 8px 3px rgba(0,0,0,.15);
+  --elev-hover: 0 2px 6px rgba(0,0,0,.32), 0 6px 12px 4px rgba(0,0,0,.16);
+  --elev-press: 0 1px 2px rgba(0,0,0,.30);
+  --hover-lift: 0px;
+  --press-shift: 0px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Noto Sans Thai",system-ui,sans-serif;
+  --font-body: "Noto Sans Thai",system-ui,sans-serif;
+  --font-mono: "Roboto Mono","Noto Sans Thai",ui-monospace,monospace;
+  --mark-kind: pill;
+  --em-soft: #DDD2EB;
+  --em-strong: #6750A4;
+  --em-strong2: #493B6F;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141218;
+    --fg: #E6E0E9;
+    --surface: #1D1B20;
+    --muted: #CAC4D0;
+    --line: #938F99;
+    --accent: #D0BCFF;
+    --on-accent: #381E72;
+    --focus: #D0BCFF;
+    --shadow-color: #000000;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: 0 1px 3px rgba(0,0,0,.30), 0 4px 8px 3px rgba(0,0,0,.15);
+    --elev-hover: 0 2px 6px rgba(0,0,0,.32), 0 6px 12px 4px rgba(0,0,0,.16);
+    --elev-press: 0 1px 2px rgba(0,0,0,.30);
+    --hover-lift: 0px;
+    --press-shift: 0px;
+    --em-soft: #3D374B;
+    --em-strong: #D0BCFF;
+    --em-strong2: #D9CAF6;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141218;
+  --fg: #E6E0E9;
+  --surface: #1D1B20;
+  --muted: #CAC4D0;
+  --line: #938F99;
+  --accent: #D0BCFF;
+  --on-accent: #381E72;
+  --focus: #D0BCFF;
+  --shadow-color: #000000;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: 0 1px 3px rgba(0,0,0,.30), 0 4px 8px 3px rgba(0,0,0,.15);
+  --elev-hover: 0 2px 6px rgba(0,0,0,.32), 0 6px 12px 4px rgba(0,0,0,.16);
+  --elev-press: 0 1px 2px rgba(0,0,0,.30);
+  --hover-lift: 0px;
+  --press-shift: 0px;
+  --em-soft: #3D374B;
+  --em-strong: #D0BCFF;
+  --em-strong2: #D9CAF6;
+}
+
+/* word emphasis */
+.ui-mark{background:var(--em-soft);padding:0 .45em;border-radius:999px}

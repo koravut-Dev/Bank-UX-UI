@@ -1,0 +1,84 @@
+/* Style: Retro / Vaporwave / Synthwave (ซินธ์เวฟ)
+   นีออนชมพู-ฟ้าอมเขียวยุค 80 เงาแข็งสีชมพู ตัวพิมพ์ใหญ่
+   Covers: พาเลตต์ vaporwave โหมดสว่าง และ synthwave โหมดมืด เงาแข็งชมพู
+   Still yours to add: ตารางเส้นพื้น พระอาทิตย์ และกริดนีออนต้องทำเอง
+   Caution: ฟอนต์หัวข้อ Orbitron ไม่มีอักษรไทย ภาษาไทยใช้ Chakra Petch แทน
+   Word emphasis (.ui-mark): outline
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Orbitron, Chakra Petch, Share Tech Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Chakra+Petch:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="synthwave.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #2B1055;
+  --c-paper: #FFE9F7;
+  --c-accent: #00D4C8;
+  --on-accent: #2B1055;
+  --muted: #5B3A85;
+  --line: #5B2A9E;
+  --shadow-color: #FF4FD8;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 0px;
+  --bw: 2px;
+  --offset: 4px;
+  --elev: 4px 4px 0 var(--shadow-color);
+  --elev-hover: 5px 5px 0 var(--shadow-color);
+  --elev-press: 0 0 0 var(--shadow-color);
+  --hover-lift: -1px;
+  --press-shift: 4px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Orbitron","Chakra Petch",system-ui,sans-serif;
+  --font-body: "Chakra Petch",system-ui,sans-serif;
+  --font-mono: "Share Tech Mono","Chakra Petch",ui-monospace,monospace;
+  --heading-weight: 700;
+  --heading-case: uppercase;
+  --mark-kind: outline;
+  --em-soft: #C7E4ED;
+  --em-strong: #15728F;
+  --em-strong2: #1E4B78;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1A0B2E;
+    --fg: #FFE9F7;
+    --surface: #2A1250;
+    --muted: #D7B8F0;
+    --line: #FF6AD5;
+    --accent: #00F0FF;
+    --on-accent: #1A0B2E;
+    --focus: #00F0FF;
+    --shadow-color: #FF4FD8;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --page-bg: linear-gradient(#1A0B2E,#3A1170);
+    --em-soft: #143D5C;
+    --em-strong: #00F0FF;
+    --em-strong2: #66EDFC;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1A0B2E;
+  --fg: #FFE9F7;
+  --surface: #2A1250;
+  --muted: #D7B8F0;
+  --line: #FF6AD5;
+  --accent: #00F0FF;
+  --on-accent: #1A0B2E;
+  --focus: #00F0FF;
+  --shadow-color: #FF4FD8;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --page-bg: linear-gradient(#1A0B2E,#3A1170);
+  --em-soft: #143D5C;
+  --em-strong: #00F0FF;
+  --em-strong2: #66EDFC;
+}
+
+/* word emphasis */
+.ui-mark{box-shadow:inset 0 0 0 .08em var(--em-strong);padding:0 .25em;border-radius:.2em}

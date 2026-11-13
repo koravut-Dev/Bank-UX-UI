@@ -1,0 +1,89 @@
+/* Style: Minimalism (มินิมอล)
+   ขาว-ดำ เส้นบาง ว่างมาก ไม่มีเงา ตัดทุกอย่างที่ไม่จำเป็น
+   Covers: พื้นขาว ปุ่มดำล้วน ขอบ 1px ไม่มีเงา น้ำหนักหัวข้อ 600
+   Still yours to add: ต้องจัดหน้าให้มีพื้นที่ว่างมากเอง (ธีมคุมแค่โทเคน)
+   Caution: ขอบสีเทากลาง 3:1 ซึ่งเข้มกว่าแนวมินิมอลปกติที่ใช้ขอบจางมาก เพราะกฎ WCAG 1.4.11
+   Word emphasis (.ui-mark): thick
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Noto Sans Thai, JetBrains Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="minimalism.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #111111;
+  --c-paper: #FFFFFF;
+  --c-accent: #111111;
+  --on-accent: #FFFFFF;
+  --muted: #595959;
+  --line: #767676;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 6px;
+  --bw: 1px;
+  --offset: 0px;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --font-display: "Noto Sans Thai",system-ui,sans-serif;
+  --font-body: "Noto Sans Thai",system-ui,sans-serif;
+  --font-mono: "JetBrains Mono","Noto Sans Thai",ui-monospace,monospace;
+  --heading-weight: 600;
+  --mark-kind: thick;
+  --em-soft: #CBCBCB;
+  --em-strong: #111111;
+  --em-strong2: #111111;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0A0A0A;
+    --fg: #F2F2F2;
+    --surface: #141414;
+    --muted: #A6A6A6;
+    --line: #8A8A8A;
+    --accent: #F2F2F2;
+    --on-accent: #0A0A0A;
+    --focus: #FFFFFF;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: none;
+    --elev-hover: none;
+    --elev-press: none;
+    --hover-lift: 0px;
+    --press-shift: 1px;
+    --em-soft: #3D3D3D;
+    --em-strong: #F2F2F2;
+    --em-strong2: #F2F2F2;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0A0A0A;
+  --fg: #F2F2F2;
+  --surface: #141414;
+  --muted: #A6A6A6;
+  --line: #8A8A8A;
+  --accent: #F2F2F2;
+  --on-accent: #0A0A0A;
+  --focus: #FFFFFF;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --em-soft: #3D3D3D;
+  --em-strong: #F2F2F2;
+  --em-strong2: #F2F2F2;
+}
+
+/* word emphasis */
+.ui-mark{text-decoration:underline;text-decoration-color:var(--em-strong);text-decoration-thickness:.16em;text-underline-offset:.14em;text-decoration-skip-ink:none}

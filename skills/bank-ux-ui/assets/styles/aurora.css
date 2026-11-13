@@ -1,0 +1,97 @@
+/* Style: Gradient / Aurora / Mesh (ไล่สีออโรรา)
+   พื้นหลังไล่สีหลายจุดคล้ายแสงเหนือ ปุ่มหลักไล่สีม่วง-น้ำเงิน
+   Covers: พื้นหลัง mesh gradient ปุ่มหลักไล่สี มุม 16px
+   Still yours to add: ไม่ต้องเพิ่ม
+   Caution: ตัวอักษรต้องผ่านคอนทราสต์บนทุกสีหยุดของไล่สี ตัวตรวจเช็กให้
+   Word emphasis (.ui-mark): gradient
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Prompt, JetBrains Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="aurora.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #0B1020;
+  --c-paper: #F3F0FF;
+  --c-accent: #7C3AED;
+  --on-accent: #FFFFFF;
+  --muted: #4B4468;
+  --line: #6D63A0;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 16px;
+  --bw: 1px;
+  --offset: 0px;
+  --elev: 0 4px 14px rgba(124,58,237,.25);
+  --elev-hover: 0 6px 18px rgba(124,58,237,.32);
+  --elev-press: 0 1px 4px rgba(124,58,237,.25);
+  --hover-lift: -1px;
+  --press-shift: 1px;
+  --primary-bg: linear-gradient(135deg,#7C3AED,#2563EB);
+  --page-bg: radial-gradient(60% 50% at 10% 0%,#D8CCFF 0,transparent 60%),radial-gradient(50% 50% at 90% 10%,#C4F1FB 0,transparent 55%),radial-gradient(60% 60% at 50% 100%,#FBD3E6 0,transparent 60%),#F3F0FF;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Prompt",system-ui,sans-serif;
+  --font-body: "Prompt",system-ui,sans-serif;
+  --font-mono: "JetBrains Mono","Prompt",ui-monospace,monospace;
+  --mark-kind: gradient;
+  --em-soft: #D9C8FB;
+  --em-strong: #7C3AED;
+  --em-strong2: #4F299B;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B0F24;
+    --fg: #EEF0FF;
+    --surface: #171C3A;
+    --muted: #B4BCE0;
+    --line: #8A94D6;
+    --accent: #A78BFA;
+    --on-accent: #0B0F24;
+    --focus: #C4B5FD;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: 0 4px 14px rgba(0,0,0,.5);
+    --elev-hover: 0 6px 18px rgba(0,0,0,.55);
+    --elev-press: 0 1px 4px rgba(0,0,0,.5);
+    --hover-lift: -1px;
+    --press-shift: 1px;
+    --primary-bg: linear-gradient(135deg,#A78BFA,#67E8F9);
+    --page-bg: radial-gradient(60% 50% at 10% 0%,#2A1F5C 0,transparent 60%),radial-gradient(50% 50% at 90% 10%,#0F3A52 0,transparent 55%),radial-gradient(60% 60% at 50% 100%,#4A1F4A 0,transparent 60%),#0B0F24;
+    --em-soft: #2D2A53;
+    --em-strong: #A78BFA;
+    --em-strong2: #C3B3FC;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B0F24;
+  --fg: #EEF0FF;
+  --surface: #171C3A;
+  --muted: #B4BCE0;
+  --line: #8A94D6;
+  --accent: #A78BFA;
+  --on-accent: #0B0F24;
+  --focus: #C4B5FD;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: 0 4px 14px rgba(0,0,0,.5);
+  --elev-hover: 0 6px 18px rgba(0,0,0,.55);
+  --elev-press: 0 1px 4px rgba(0,0,0,.5);
+  --hover-lift: -1px;
+  --press-shift: 1px;
+  --primary-bg: linear-gradient(135deg,#A78BFA,#67E8F9);
+  --page-bg: radial-gradient(60% 50% at 10% 0%,#2A1F5C 0,transparent 60%),radial-gradient(50% 50% at 90% 10%,#0F3A52 0,transparent 55%),radial-gradient(60% 60% at 50% 100%,#4A1F4A 0,transparent 60%),#0B0F24;
+  --em-soft: #2D2A53;
+  --em-strong: #A78BFA;
+  --em-strong2: #C3B3FC;
+}
+
+/* word emphasis */
+.ui-mark{background-image:linear-gradient(90deg,var(--em-strong),var(--em-strong2));-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (forced-colors:active){.ui-mark{color:CanvasText;background:none}}

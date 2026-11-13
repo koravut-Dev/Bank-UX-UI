@@ -1,0 +1,89 @@
+/* Style: Swiss / International Typographic (สวิส)
+   ตารางเป๊ะ ตัวอักษรไร้เชิงหนา ขาว-ดำ เน้นสีแดงสวิสจุดเดียว ไม่มีเงา
+   Covers: ขอบ 1px เหลี่ยม ไม่มีเงา แดงสวิสบนขาว
+   Still yours to add: ต้องจัดหน้าตามกริดและจัดชิดซ้ายเอง
+   Caution: ไม่มี
+   Word emphasis (.ui-mark): block
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Noto Sans Thai, JetBrains Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="swiss.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #111111;
+  --c-paper: #FFFFFF;
+  --c-accent: #E30613;
+  --on-accent: #FFFFFF;
+  --muted: #555555;
+  --line: #767676;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 0px;
+  --bw: 1px;
+  --offset: 0px;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --font-display: "Noto Sans Thai",system-ui,sans-serif;
+  --font-body: "Noto Sans Thai",system-ui,sans-serif;
+  --font-mono: "JetBrains Mono","Noto Sans Thai",ui-monospace,monospace;
+  --heading-weight: 700;
+  --mark-kind: block;
+  --em-soft: #F9C8CB;
+  --em-strong: #E30613;
+  --em-strong2: #8F0A12;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111111;
+    --fg: #FFFFFF;
+    --surface: #1A1A1A;
+    --muted: #AAAAAA;
+    --line: #8A8A8A;
+    --accent: #FF4D58;
+    --on-accent: #111111;
+    --focus: #FF4D58;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: none;
+    --elev-hover: none;
+    --elev-press: none;
+    --hover-lift: 0px;
+    --press-shift: 1px;
+    --em-soft: #451E21;
+    --em-strong: #FF4D58;
+    --em-strong2: #FF949B;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111111;
+  --fg: #FFFFFF;
+  --surface: #1A1A1A;
+  --muted: #AAAAAA;
+  --line: #8A8A8A;
+  --accent: #FF4D58;
+  --on-accent: #111111;
+  --focus: #FF4D58;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --em-soft: #451E21;
+  --em-strong: #FF4D58;
+  --em-strong2: #FF949B;
+}
+
+/* word emphasis */
+.ui-mark{background:var(--accent);color:var(--on-accent);padding:0 .15em;border-radius:.15em}

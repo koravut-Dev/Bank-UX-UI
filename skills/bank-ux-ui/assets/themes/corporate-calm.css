@@ -1,0 +1,57 @@
+/* Theme: corporate-calm
+   For regulated or safety-critical UI (banking, finance, medical, legal; exclusions in SKILL.md step 3): same structure and rules as the
+   Bank identity, but no hard-offset shadow, thin borders, calmer blue accent.
+   Usage: <link rel="stylesheet" href="identity.css"> then <link rel="stylesheet" href="corporate-calm.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --id-ink: #14213D;
+  --id-paper: #F7F8FA;
+  --id-accent: #1D4ED8;
+  --on-accent: #FFFFFF;
+  --mark-bg: var(--accent); /* dark accent: highlighter becomes a solid block with on-accent text */
+  --mark-fg: var(--on-accent);
+
+  --muted: #4B5563;
+  --line: #6B7280;
+  --shadow-color: transparent;
+  --focus: #14213D;
+  --danger: #B42318;
+  --success: #0A7A3B;
+  --warning: #8A5A00;
+
+  --radius: 8px;
+  --bw: 1px;
+  --offset: 0px; /* offset 0 turns the hard shadow off everywhere; hover still lifts 1px, pressing does not move the element */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B1220;
+    --fg: #E6EAF2;
+    --muted: #A8B3C7;
+    --surface: #121A2B;
+    --line: #8FA0BF;
+    --shadow-color: transparent;
+    --focus: #93C5FD;
+    --accent: #60A5FA;
+    --on-accent: #0B1220;
+    --danger: #FF8A99;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B1220;
+  --fg: #E6EAF2;
+  --muted: #A8B3C7;
+  --surface: #121A2B;
+  --line: #8FA0BF;
+  --shadow-color: transparent;
+  --focus: #93C5FD;
+  --accent: #60A5FA;
+  --on-accent: #0B1220;
+  --danger: #FF8A99;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+}

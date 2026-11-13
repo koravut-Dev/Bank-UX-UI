@@ -1,0 +1,82 @@
+/* Style: Art Nouveau (อาร์ตนูโว)
+   เส้นโค้งอ่อนช้อยแบบธรรมชาติ สีเขียวเสจกับทองน้ำตาล มุมโค้งสลับขนาด
+   Covers: มุมโค้งไม่สมมาตร เงาสีทองน้ำตาล พาเลตต์เสจและครีม ฟอนต์เซอริฟบาง
+   Still yours to add: ลายเถาวัลย์และกรอบประดับต้องใส่เอง
+   Caution: ฟอนต์ Cormorant Garamond ไม่มีอักษรไทย ใช้ Taviraj แทน
+   Word emphasis (.ui-mark): serif
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Cormorant Garamond, Taviraj, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Taviraj:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="art-nouveau.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #2F3B2A;
+  --c-paper: #F4EBD3;
+  --c-accent: #9AB87A;
+  --on-accent: #1F2A1B;
+  --surface: #FBF6E6;
+  --muted: #54604A;
+  --line: #5E6E4F;
+  --shadow-color: #8A6A2A;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 28px 8px 28px 8px;
+  --bw: 2px;
+  --offset: 3px;
+  --elev: 3px 3px 0 var(--shadow-color);
+  --elev-hover: 4px 4px 0 var(--shadow-color);
+  --elev-press: 0 0 0 var(--shadow-color);
+  --hover-lift: -1px;
+  --press-shift: 3px;
+  --hover-filter: none;
+  --press-filter: none;
+  --font-display: "Cormorant Garamond","Taviraj",serif;
+  --font-body: "Taviraj",serif;
+  --font-mono: "Space Mono","Taviraj",ui-monospace,monospace;
+  --heading-weight: 700;
+  --mark-kind: serif;
+  --em-soft: #E0E0BF;
+  --em-strong: #5A6D4A;
+  --em-strong2: #49593D;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1C2418;
+    --fg: #EFE6CC;
+    --surface: #26301F;
+    --muted: #C5CCB0;
+    --line: #A9B78F;
+    --accent: #C2D9A0;
+    --on-accent: #1C2418;
+    --focus: #E2C879;
+    --shadow-color: #C9A24A;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --em-soft: #414C36;
+    --em-strong: #C2D9A0;
+    --em-strong2: #D4DEB2;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1C2418;
+  --fg: #EFE6CC;
+  --surface: #26301F;
+  --muted: #C5CCB0;
+  --line: #A9B78F;
+  --accent: #C2D9A0;
+  --on-accent: #1C2418;
+  --focus: #E2C879;
+  --shadow-color: #C9A24A;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --em-soft: #414C36;
+  --em-strong: #C2D9A0;
+  --em-strong2: #D4DEB2;
+}
+
+/* word emphasis */
+.ui-mark{font-family:"Playfair Display","Noto Serif Thai",Georgia,serif;font-style:italic;font-weight:700}

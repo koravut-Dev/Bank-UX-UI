@@ -1,0 +1,89 @@
+/* Style: Editorial / Magazine (บรรณาธิการ/นิตยสาร)
+   ฟอนต์มีเชิงสำหรับหัวข้อและเนื้อความ พื้นกระดาษอุ่น สีแดงอิฐ มุมแทบไม่โค้ง
+   Covers: ฟอนต์เซอริฟไทยและละติน พาเลตต์กระดาษและแดงอิฐ ไม่มีเงา
+   Still yours to add: การจัดคอลัมน์ drop cap และภาพขนาดใหญ่ต้องทำเอง
+   Caution: ไม่มี
+   Word emphasis (.ui-mark): serif
+   Fonts to load (all Thai-capable for body/display unless the caution says otherwise): Playfair Display, Maitree, Space Mono
+   Font link (only the weights each family has; do not add weights): <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Maitree:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   Usage: <link rel="stylesheet" href="base.css"> then <link rel="stylesheet" href="editorial.css">
+   Verify: node <skill-folder>/scripts/check-theme.mjs <path of your copy of this file> */
+
+:root {
+  --c-ink: #1A1A1A;
+  --c-paper: #FAF7F2;
+  --c-accent: #B3261E;
+  --on-accent: #FFFFFF;
+  --muted: #5A554E;
+  --line: #8A8378;
+  --shadow-color: transparent;
+  --danger: #B3122B;
+  --success: #0A6E37;
+  --warning: #7A4F00;
+  --radius: 2px;
+  --bw: 1px;
+  --offset: 0px;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --font-display: "Playfair Display","Maitree",serif;
+  --font-body: "Maitree",serif;
+  --font-mono: "Space Mono","Maitree",ui-monospace,monospace;
+  --heading-weight: 700;
+  --mark-kind: serif;
+  --em-soft: #EAC9C3;
+  --em-strong: #B3261E;
+  --em-strong2: #76211C;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15130F;
+    --fg: #F3EEE4;
+    --surface: #1E1B16;
+    --muted: #B8B0A2;
+    --line: #8F8778;
+    --accent: #FF8A80;
+    --on-accent: #15130F;
+    --focus: #FFB4AB;
+    --shadow-color: transparent;
+    --danger: #FF7A8E;
+    --success: #5BE08C;
+    --warning: #F2B84B;
+    --elev: none;
+    --elev-hover: none;
+    --elev-press: none;
+    --hover-lift: 0px;
+    --press-shift: 1px;
+    --em-soft: #482D28;
+    --em-strong: #FF8A80;
+    --em-strong2: #FAB2A8;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15130F;
+  --fg: #F3EEE4;
+  --surface: #1E1B16;
+  --muted: #B8B0A2;
+  --line: #8F8778;
+  --accent: #FF8A80;
+  --on-accent: #15130F;
+  --focus: #FFB4AB;
+  --shadow-color: transparent;
+  --danger: #FF7A8E;
+  --success: #5BE08C;
+  --warning: #F2B84B;
+  --elev: none;
+  --elev-hover: none;
+  --elev-press: none;
+  --hover-lift: 0px;
+  --press-shift: 1px;
+  --em-soft: #482D28;
+  --em-strong: #FF8A80;
+  --em-strong2: #FAB2A8;
+}
+
+/* word emphasis */
+.ui-mark{font-family:"Playfair Display","Noto Serif Thai",Georgia,serif;font-style:italic;font-weight:700}
